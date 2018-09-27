@@ -1,8 +1,6 @@
 PHPPHP
 ======
 
-![YO DAWG](http://i.stack.imgur.com/JarJ0.jpg)
-
 A PHP VM implementation written in PHP.
 
 This is a basic VM implemented in PHP using the [AST generating parser](https://github.com/nikic/PHP-Parser) developed by @nikic
