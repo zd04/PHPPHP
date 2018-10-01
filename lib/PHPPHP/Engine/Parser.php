@@ -19,8 +19,9 @@ class Parser {
     }
     
     public function parse($code) {
+        //获取ast的
         $ast = $this->parser->parse($code);
-        $ast = $this->traverser->traverse($ast);
+        $ast = $this->traverser->traverse($ast);//这个地方为什么还要在遍历ast??
         return $ast;
     }
 

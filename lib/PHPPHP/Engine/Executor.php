@@ -35,12 +35,16 @@ class Executor {
         $this->executorGlobals = new ExecutorGlobals;
         $this->parser = new Parser;
         $this->compiler = new Compiler($functionStore);
+
         $this->functionStore = $functionStore;
         $this->constantStore = $constantStore;
         $this->classStore = $classStore;
 
+        //扩展
         $this->extensions = new \SplObjectStorage;
+        //栈
         $this->stack = new \SplStack;
+        //错误
         $this->errorHandler = new ErrorHandler\Internal;
     }
 
@@ -91,14 +95,15 @@ class Executor {
     public function compileFile($fileName) {
         $this->compiler->setFileName($fileName, dirname($fileName));
         if (!isset($this->files[$fileName])) {
-            $code = file_get_contents($fileName);
-            $this->files[$fileName] = $this->parseCode($code, $fileName);
+            $code = file_get_contents($fileName);//从文件获取源码
+            $this->files[$fileName] = $this->parseCode($code, $fileName);//代码
         }
         return $this->compileCode($this->files[$fileName], $fileName);
     }
 
     public function compile($code, $context) {
-        $ast = $this->parseCode($code, $context);
+        $ast = $this->parseCode($code, $context);//代码
+        DEBUG && var_dump($ast);
         $this->compiler->setFileName($context, $this->executorGlobals->cwd);
         return $this->compileCode($ast, $context);
     }

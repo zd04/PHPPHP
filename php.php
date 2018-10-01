@@ -10,15 +10,30 @@ $php->registerExtensionByName('Shim'); // This *MUST* be the last core extension
 
 list($options, $args) = parseCliArgs($argv);
 
+//调试模式的
+if(isset($options['d'])){
+    defined("DEBUG") or define("DEBUG",true);
+}else{
+    defined("DEBUG") or define("DEBUG",false);
+}
+
 if (isset($options['v'])) {
     echo "PHPPHP - Dev Master\n";
 } elseif (isset($options['f'])) {
     $php->executeFile(realpath($options['f']));
 } elseif (isset($options['r'])) {
     $php->setCWD(getcwd());
-    $php->execute('<?php ' . $options['r']);
+    if(isset($options['c'])){
+        $php->compile('<?php ' . $options['r']);
+    }else{
+        $php->execute('<?php ' . $options['r']);
+    }
 } elseif (isset($args[0])) {
-    $php->executeFile(realpath($args[0]));
+    if(isset($options['c'])){
+        $php->compileFile(realpath($args[0]));
+    }else{
+        $php->executeFile(realpath($args[0]));
+    }
 } else {
     echo "Invalid arguments\n";
 }

@@ -123,25 +123,27 @@ class Compiler {
         return $this->fileName;
     }
 
+    //生成oparray
     public function compile(array $ast, Zval\Ptr $returnContext = null) {
         $opArray = new OpArray($this->fileName);
         $this->opArray = $opArray;
 
-        $this->compileTopLevelFunctions($ast);
-        $this->compileNodes($ast, $returnContext);
+        $this->compileTopLevelFunctions($ast);//编译全局的方法
+        $this->compileNodes($ast, $returnContext);//编辑节点的
         $opArray[] = new OpLines\ReturnOp(end($ast)->getLine());
 
         unset($this->opArray);
+        DEBUG && var_dump($opArray);
         return $opArray;
     }
 
     protected function compileTopLevelFunctions(array $ast) {
         foreach ($ast as $node) {
-            if ($node instanceof \PHPParser_Node_Stmt_Function) {
+            if ($node instanceof \PHPParser_Node_Stmt_Function) {//如果是方法的
                 $funcData = $this->compileFunction($node);
                 $this->functionStore->register($node->namespacedName, $funcData);
                 $node->alreadyCompiled = true;
-            } elseif ($node instanceof \PHPParser_Node_Stmt_Namespace) {
+            } elseif ($node instanceof \PHPParser_Node_Stmt_Namespace) {//如果是命名空间的
                 $this->compileTopLevelFunctions($node->stmts);
             }
         }
@@ -155,10 +157,13 @@ class Compiler {
 
     protected function compileNode(\PHPParser_Node $node, Zval\Ptr $returnContext = null) {
         $nodeType = $node->getType();
+
+        //在上面的数组中包含的映射关系的
         if (isset($this->operators[$nodeType])) {
             call_user_func_array(
-                array($this, 'compile' . $this->operators[$nodeType][0]),
-                array_merge(array($node, $returnContext), array_slice($this->operators[$nodeType], 1))
+                array($this, 'compile' . $this->operators[$nodeType][0]),//本类的方法
+
+                array_merge(array($node, $returnContext), array_slice($this->operators[$nodeType], 1)) //合并参数的
             );
 
             return;
@@ -253,6 +258,7 @@ class Compiler {
         $this->opArray[] = new $class($node->getLine(), $op1, null, $returnContext ?: Zval::ptrFactory());
     }
 
+    //标量的编译
     protected function compileScalarOp($node, $returnContext, $name = 'value', $sep = '') {
         if ($returnContext) {
             if ($sep) {

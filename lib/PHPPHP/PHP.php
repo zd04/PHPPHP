@@ -38,12 +38,21 @@ class PHP {
     }
 
     public function execute($code) {
+        try {//编译代码
+            $opCodes = $this->executor->compile($code, 'Command line code');
+        } catch (Engine\ErrorOccurredException $e) {
+            die();
+        }//执行的
+        return $this->executeOpLines($opCodes);
+    }
+
+    public function compile($code){
         try {
             $opCodes = $this->executor->compile($code, 'Command line code');
         } catch (Engine\ErrorOccurredException $e) {
             die();
         }
-        return $this->executeOpLines($opCodes);
+        DEBUG && var_dump($opCodes);
     }
 
     public function executeFile($file) {
@@ -59,6 +68,20 @@ class PHP {
         return $this->executeOpLines($opCodes);
     }
 
+    public function compileFile($file) {
+        if (empty($file)) {
+            throw new \RuntimeException('Filename must not be empty');
+        }
+        $this->setCWD(dirname($file));
+        try {
+            $opCodes = $this->executor->compileFile($file);
+        } catch (Engine\ErrorOccurredException $e) {
+            die();
+        }
+        DEBUG && var_dump($opCodes);
+    }
+
+    //执行代码的
     public function executeOpLines(Engine\OpArray $opCodes) {
         try {
             $retval = $this->executor->execute($opCodes);
