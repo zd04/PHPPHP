@@ -4,12 +4,22 @@ error_reporting(E_ALL | E_STRICT);
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+/**
+ * 输出日志的
+ * @param  [type] $msg [description]
+ * @return [type]      [description]
+ */
+function loggerInfo($msg){
+    echo $msg,PHP_EOL;
+}
+
 $php = new PHPPHP\PHP;
 
 $php->registerExtensionByName('Shim'); // This *MUST* be the last core extension to be loaded!!!
 
 list($options, $args) = parseCliArgs($argv);
 
+define("DEBUG",true);
 //调试模式的
 if(isset($options['d'])){
     defined("DEBUG") or define("DEBUG",true);

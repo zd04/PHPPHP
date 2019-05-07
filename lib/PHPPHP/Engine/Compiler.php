@@ -125,11 +125,14 @@ class Compiler {
 
     //生成oparray
     public function compile(array $ast, Zval\Ptr $returnContext = null) {
+        DEBUG && var_dump("complie",$ast);
         $opArray = new OpArray($this->fileName);
         $this->opArray = $opArray;
 
         $this->compileTopLevelFunctions($ast);//编译全局的方法
         $this->compileNodes($ast, $returnContext);//编辑节点的
+
+        //最后一个节点一定是返回的
         $opArray[] = new OpLines\ReturnOp(end($ast)->getLine());
 
         unset($this->opArray);
@@ -160,6 +163,7 @@ class Compiler {
 
         //在上面的数组中包含的映射关系的
         if (isset($this->operators[$nodeType])) {
+            DEBUG && var_dump("in operators",'compile' . $this->operators[$nodeType][0]);
             call_user_func_array(
                 array($this, 'compile' . $this->operators[$nodeType][0]),//本类的方法
 
@@ -170,6 +174,7 @@ class Compiler {
         }
 
         $methodName = 'compile_' . $nodeType;
+        DEBUG && var_dump("not in operators",$methodName);
         if (!method_exists($this, $methodName)) {
             var_dump($node);
             throw new CompileException($nodeType . ' not supported yet', $node->line);
@@ -811,6 +816,7 @@ class Compiler {
 
         $params = array();
 
+        //编译参数的,函数的参数
         foreach ($node->params as $i => $param) {
             $type = null;
             if ($param->type && $param->type instanceof \PHPParser_Node) {
@@ -838,6 +844,7 @@ class Compiler {
 
         $this->compileChild($node, 'stmts');
 
+        //最后一个是返回值,自动补全的
         $this->opArray[] = new OpLines\ReturnOp($node->getLine());
 
         $funcData = new FunctionData\User($this->opArray, (bool) $node->byRef, $params);

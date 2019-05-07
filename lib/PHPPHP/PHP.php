@@ -16,10 +16,11 @@ class PHP {
         $this->executor = new Engine\Executor($functions, $constants, $classes);
         $this->executor->setOutput(new Engine\Output\Std($this->executor));
 
-        $this->registerExtension(new Engine\CoreExtension);
-        $this->registerExtension(new Ext\Strings\Extension);
+        $this->registerExtension(new Engine\CoreExtension);//注册内核的
+        $this->registerExtension(new Ext\Strings\Extension);//注册字符串扩展的
     }
 
+    //注册扩展的
     public function registerExtension(Engine\Extension $extension) {
         $this->executor->registerExtension($extension);
     }
@@ -61,6 +62,7 @@ class PHP {
         }
         $this->setCWD(dirname($file));
         try {
+            loggerInfo(__METHOD__.",".$file);
             $opCodes = $this->executor->compileFile($file);
         } catch (Engine\ErrorOccurredException $e) {
             die();
