@@ -14,6 +14,8 @@ class PHP {
         $classes = new Engine\ClassStore;
 
         $this->executor = new Engine\Executor($functions, $constants, $classes);
+
+        //输出的
         $this->executor->setOutput(new Engine\Output\Std($this->executor));
 
         $this->registerExtension(new Engine\CoreExtension);//注册内核的
@@ -67,6 +69,7 @@ class PHP {
         } catch (Engine\ErrorOccurredException $e) {
             die();
         }
+        // print_r($opCodes);exit;
         return $this->executeOpLines($opCodes);
     }
 
@@ -90,8 +93,14 @@ class PHP {
             if ($retval) {
                 return $retval->getValue();
             }
+
+
             $this->executor->shutdown();
+
+
             $this->executor->getOutput()->finish();
+
+
         } catch (Engine\ErrorOccurredException $e) {
             // Ignore, since the error should be in the OB
         }

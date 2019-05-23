@@ -7,7 +7,7 @@ use PHPParser_Node_Expr_Include as IncludeNode;
 class IncludeOp extends \PHPPHP\Engine\OpLine {
 
     public function execute(\PHPPHP\Engine\ExecuteData $data) {
-        $fileName = $this->op2->toString();
+        $fileName = $this->op2->toString();//文件的名字
         if (substr($fileName, 0, 1) !== '/') {
             $fileName = $data->executor->executorGlobals->cwd . '/' . $fileName;
         }
@@ -15,6 +15,8 @@ class IncludeOp extends \PHPPHP\Engine\OpLine {
         if (!is_file($fileName)) {
             throw new \RuntimeException('Including bad file!');
         }
+        //是那种类型的??
+        //include require include_once require_once
         switch ($this->op1->getValue()) {
             case IncludeNode::TYPE_INCLUDE_ONCE:
             case IncludeNode::TYPE_REQUIRE_ONCE:
@@ -24,6 +26,7 @@ class IncludeOp extends \PHPPHP\Engine\OpLine {
             case IncludeNode::TYPE_INCLUDE:
             case IncludeNode::TYPE_REQUIRE:
                 $opCodes = $data->executor->compileFile($fileName);
+                
                 $data->executor->execute($opCodes);
         }
 

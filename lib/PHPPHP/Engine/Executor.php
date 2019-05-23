@@ -31,14 +31,18 @@ class Executor {
     protected $preExecute;
     protected $postExecute;
 
-    public function __construct(FunctionStore $functionStore, ConstantStore $constantStore, ClassStore $classStore) {
-        $this->executorGlobals = new ExecutorGlobals;
-        $this->parser = new Parser;
-        $this->compiler = new Compiler($functionStore);
+    public function __construct(
+        FunctionStore $functionStore, 
+        ConstantStore $constantStore, 
+        ClassStore $classStore) {
 
-        $this->functionStore = $functionStore;
-        $this->constantStore = $constantStore;
-        $this->classStore = $classStore;
+        $this->executorGlobals = new ExecutorGlobals;//全局的数据容器
+        $this->parser = new Parser;//解析器
+        $this->compiler = new Compiler($functionStore);//编译器
+
+        $this->functionStore = $functionStore;//环境的方法列表
+        $this->constantStore = $constantStore;//环境的常量列表
+        $this->classStore = $classStore;//环境的class列表
 
         //扩展
         $this->extensions = new \SplObjectStorage;
@@ -94,23 +98,31 @@ class Executor {
 
     public function compileFile($fileName) {
         $this->compiler->setFileName($fileName, dirname($fileName));
+
         if (!isset($this->files[$fileName])) {
             $code = file_get_contents($fileName);//从文件获取源码
+            /*获取到的是编译的节点parse_node，就是AST*/
             $this->files[$fileName] = $this->parseCode($code, $fileName);//代码
+            //echo __METHOD__,PHP_EOL;
+            //var_dump($fileName,$this->files[$fileName]);//exit;
         }
         return $this->compileCode($this->files[$fileName], $fileName);
     }
 
     public function compile($code, $context) {
+        //解析代码的
         $ast = $this->parseCode($code, $context);//代码
+
         DEBUG && var_dump($ast);
         $this->compiler->setFileName($context, $this->executorGlobals->cwd);
+
         return $this->compileCode($ast, $context);
     }
 
     protected function compileCode(array $ast, $file) {
         try {
             return $this->compiler->compile($ast);
+
         } catch (CompileException $e) {
             $line = $e->getRawLine();
             $this->errorHandler->handle($this, E_COMPILE_ERROR, $e->getMessage(), $file, $line);
@@ -120,7 +132,9 @@ class Executor {
 
     protected function parseCode($code, $file) {
         try {
+            //编译代码的到AST
             return $this->parser->parse($code);
+
         } catch (\PHPParser_Error $e) {
             $message = 'syntax error, ' . str_replace('Unexpected', 'unexpected', $e->getMessage());
             $line = $e->getRawLine();
@@ -129,42 +143,69 @@ class Executor {
         }
     }
 
-    public function execute(OpArray $opArray, array &$symbolTable = array(), FunctionData $function = null, array $args = array(), Zval $result = null, Objects\ClassInstance $ci = null) {
+    //带环境的运行opcode的
+    public function execute(
+        OpArray $opArray, 
+        array &$symbolTable = array(), 
+        FunctionData $function = null, 
+        array $args = array(), 
+        Zval $result = null, 
+        Objects\ClassInstance $ci = null) {
+
         $shutdownScope = $this->shutdown;
         if ($this->shutdown == self::FINISHED_SHUTDOWN) return;
-        $opArray->registerExecutor($this);
-        $scope = new ExecuteData($this, $opArray, $function);
+
+        $opArray->registerExecutor($this);//保存当前的运行器
+
+        //echo __METHOD__,PHP_EOL;
+        //var_dump($this);
+
+        $scope = new ExecuteData($this, $opArray, $function);/*运行环境的的变量信息*/
         $scope->arguments = $args;
         $scope->ci = $ci;
         $preExecute = $this->preExecute;
         $postExecute = $this->postExecute;
 
+        //这个就是上一层的是那一个
         if ($this->current) {
             $scope->parent = $this->current;
         }
+
         $this->current = $scope;
+
         if ($symbolTable || $function) {
             $scope->symbolTable =& $symbolTable;
         } else {
             $scope->symbolTable =& $this->executorGlobals->symbolTable;
         }
+
+        //返回值的信息，如果没有返回值的话就是生成一个默认的返回值
         $scope->returnValue = $result ?: Zval::ptrFactory();
         if ($function && $function->isByRef()) {
             $scope->returnValue->makeRef();
         }
 
+        /*
+        $this->shutdown == $shutdownScope 这个就是说
+         */
         while ($this->shutdown == $shutdownScope && $scope->opLine) {
+
+            //运行之前的回调
             if ($preExecute) {
                 call_user_func($preExecute, $scope);
             }
 
             $ret = $scope->opLine->execute($scope);
 
+            //运行之后的回调
             if ($postExecute) {
                 call_user_func($postExecute, $scope, $ret);
             }
 
-            if ($this->shutdown == $shutdownScope && $this->executorGlobals->timeLimit && $this->executorGlobals->timeLimitEnd < time()) {
+            if ($this->shutdown == $shutdownScope 
+                && $this->executorGlobals->timeLimit 
+                && $this->executorGlobals->timeLimitEnd < time()) {
+
                 $limit = $this->executorGlobals->timeLimit;
                 $message = sprintf('Maximum execution time of %d second%s exceeded', $limit, $limit == 1 ? '' : 's');
                 $this->errorHandler->handle($this, E_ERROR, $message, $opArray->getFileName(), $scope->opLine->lineno, '', false);
@@ -249,6 +290,7 @@ class Executor {
         $this->shutdownFunctions[] = $cb;
     }
 
+    //
     public function registerExtension(Extension $extension) {
         if (!$this->extensions->contains($extension)) {
             $extension->register($this);

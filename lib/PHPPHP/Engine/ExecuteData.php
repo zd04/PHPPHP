@@ -13,14 +13,19 @@ class ExecuteData {
     public $symbolTable = array();
     protected $opPosition = 0;
 
-    public function __construct(Executor $executor, OpArray $opArray, FunctionData $function = null) {
+    public function __construct(
+        Executor $executor, 
+        OpArray $opArray, 
+        FunctionData $function = null) {
+        
         $this->executor = $executor;
-        $this->opArray = $opArray;
-        $this->opLine = $opArray[0];
-        $this->function = $function;
+        $this->opArray = $opArray;//全部的opline
+        $this->opLine = $opArray[0];//当前的opline,初始化的时候是第一个
+        $this->function = $function;//当前运行的环境的
         $this->returnValue = Zval::ptrFactory();
     }
 
+    //变量的保存的地方
     public function fetchVariable($name) {
         if (!isset($this->symbolTable[$name])) {
             $this->symbolTable[$name] = Zval::ptrFactory();

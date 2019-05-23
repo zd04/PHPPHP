@@ -13,11 +13,11 @@ use PHPPHP\Engine\Scope;
 
 class ClassEntry
 {
-    private $name;
-    private $properties;
-    private $methods;
-    private $constants;
-    private $parent;
+    private $name;//名称
+    private $properties;//属性
+    private $methods;//方法
+    private $constants;//常量
+    private $parent;//父类
 
     public function __construct($name, ClassEntry $parent = null)
     {

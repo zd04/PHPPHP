@@ -126,6 +126,7 @@ class Compiler {
     //生成oparray
     public function compile(array $ast, Zval\Ptr $returnContext = null) {
         DEBUG && var_dump("complie",$ast);
+        //创建一个新的opArray的
         $opArray = new OpArray($this->fileName);
         $this->opArray = $opArray;
 
@@ -141,13 +142,20 @@ class Compiler {
     }
 
     protected function compileTopLevelFunctions(array $ast) {
+        //echo __METHOD__,PHP_EOL;
+        //var_dump($ast);exit;
+
+        //编译全部的方法的
         foreach ($ast as $node) {
+
             if ($node instanceof \PHPParser_Node_Stmt_Function) {//如果是方法的
                 $funcData = $this->compileFunction($node);
                 $this->functionStore->register($node->namespacedName, $funcData);
                 $node->alreadyCompiled = true;
+
             } elseif ($node instanceof \PHPParser_Node_Stmt_Namespace) {//如果是命名空间的
                 $this->compileTopLevelFunctions($node->stmts);
+
             }
         }
     }
@@ -159,14 +167,17 @@ class Compiler {
     }
 
     protected function compileNode(\PHPParser_Node $node, Zval\Ptr $returnContext = null) {
+        //查询类型的
         $nodeType = $node->getType();
 
         //在上面的数组中包含的映射关系的
         if (isset($this->operators[$nodeType])) {
             DEBUG && var_dump("in operators",'compile' . $this->operators[$nodeType][0]);
+
             call_user_func_array(
                 array($this, 'compile' . $this->operators[$nodeType][0]),//本类的方法
 
+                //第一个参数是当前的node节点 第二个参数是返回信息的上下午，后面的就是和node类型有关的参数了
                 array_merge(array($node, $returnContext), array_slice($this->operators[$nodeType], 1)) //合并参数的
             );
 
@@ -175,11 +186,14 @@ class Compiler {
 
         $methodName = 'compile_' . $nodeType;
         DEBUG && var_dump("not in operators",$methodName);
+
+
         if (!method_exists($this, $methodName)) {
             var_dump($node);
             throw new CompileException($nodeType . ' not supported yet', $node->line);
         }
 
+        //没有参数的
         call_user_func(array($this, $methodName), $node, $returnContext);
     }
 
@@ -192,8 +206,10 @@ class Compiler {
         if (is_scalar($childNode)) {
             $returnContext->setValue($childNode);
         } elseif (is_array($childNode)) {
+            //如果是一个数组的话
             $this->compileNodes($childNode, $returnContext);
         } else {
+            //不是数组的
             $this->compileNode($childNode, $returnContext);
         }
     }
@@ -224,6 +240,7 @@ class Compiler {
     public function compileBinaryAssignOp($node, $returnContext, $class) {
         $property = null;
         $dim = null;
+        
         $op1 = Zval::ptrFactory();
         $op2 = Zval::ptrFactory();
 
@@ -259,7 +276,11 @@ class Compiler {
 
     protected function compileUnaryOp($node, $returnContext, $class, $expr = 'expr') {
         $op1 = Zval::ptrFactory();
+
+
         $this->compileChild($node, $expr, $op1);
+
+
         $this->opArray[] = new $class($node->getLine(), $op1, null, $returnContext ?: Zval::ptrFactory());
     }
 
@@ -277,8 +298,16 @@ class Compiler {
     public function compile_Stmt_Echo($node, $returnContext = null) {
         foreach ($node->exprs as $expr) {
             $exprPtr = Zval::ptrFactory();
+
+
             $this->compileNode($expr, $exprPtr);
-            $this->opArray[] = new OpLines\EchoOp($node->getLine(), $exprPtr, null, $returnContext ?: Zval::ptrFactory());
+
+
+            $this->opArray[] = new OpLines\EchoOp(
+                $node->getLine(), 
+                $exprPtr, 
+                null, 
+                $returnContext ?: Zval::ptrFactory());
         }
     }
 
@@ -811,7 +840,8 @@ class Compiler {
     }
 
     protected function compileFunction($node) {
-        $prevOpArray = $this->opArray;
+        $prevOpArray = $this->opArray;//前一个opArray就是当前的opArray
+
         $this->opArray = new OpArray($this->fileName);
 
         $params = array();
@@ -847,7 +877,9 @@ class Compiler {
         //最后一个是返回值,自动补全的
         $this->opArray[] = new OpLines\ReturnOp($node->getLine());
 
+        //生成用户自定义的函数信息
         $funcData = new FunctionData\User($this->opArray, (bool) $node->byRef, $params);
+
         $this->opArray = $prevOpArray;
         return $funcData;
     }
