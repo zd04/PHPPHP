@@ -19,6 +19,7 @@ class User extends Base {
         return $this->opArray->getFileName();
     }
 
+
     public function execute(Engine\Executor $executor, array $args, Engine\Zval\Ptr $return, \PHPPHP\Engine\Objects\ClassInstance $ci = null, \PHPPHP\Engine\Objects\ClassEntry $ce = null) {
         $scope = array();
         if (!$args) {
@@ -28,6 +29,7 @@ class User extends Base {
         if ($this->byRef) {
             $return->makeRef();
         }
+//function execute(OpArray $opArray, array &$symbolTable = array(), FunctionData $function = null, array $args = array(), Zval $result = null, Objects\ClassInstance $ci = null) 
         $executor->execute($this->opArray, $scope, $this, $args, $return, $ci, $ce);
     }
 }

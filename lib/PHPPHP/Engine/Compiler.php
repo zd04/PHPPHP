@@ -125,7 +125,7 @@ class Compiler {
 
     //生成oparray
     public function compile(array $ast, Zval\Ptr $returnContext = null) {
-        DEBUG && var_dump("complie",$ast);
+        //DEBUG && var_dump("complie",$ast);
         //创建一个新的opArray的
         $opArray = new OpArray($this->fileName);
         $this->opArray = $opArray;
@@ -137,7 +137,7 @@ class Compiler {
         $opArray[] = new OpLines\ReturnOp(end($ast)->getLine());
 
         unset($this->opArray);
-        DEBUG && var_dump($opArray);
+        DEBUG && var_dump($opArray);//exit;
         return $opArray;
     }
 
@@ -169,10 +169,11 @@ class Compiler {
     protected function compileNode(\PHPParser_Node $node, Zval\Ptr $returnContext = null) {
         //查询类型的
         $nodeType = $node->getType();
+        var_dump($nodeType);
 
         //在上面的数组中包含的映射关系的
         if (isset($this->operators[$nodeType])) {
-            DEBUG && var_dump("in operators",'compile' . $this->operators[$nodeType][0]);
+            //DEBUG && var_dump("in operators",'compile' . $this->operators[$nodeType][0]);
 
             call_user_func_array(
                 array($this, 'compile' . $this->operators[$nodeType][0]),//本类的方法
@@ -185,11 +186,11 @@ class Compiler {
         }
 
         $methodName = 'compile_' . $nodeType;
-        DEBUG && var_dump("not in operators",$methodName);
+        //DEBUG && var_dump("not in operators",$methodName);
 
 
         if (!method_exists($this, $methodName)) {
-            var_dump($node);
+            //var_dump($node);
             throw new CompileException($nodeType . ' not supported yet', $node->line);
         }
 
@@ -767,10 +768,13 @@ class Compiler {
 
     protected function compile_Stmt_Class($node) {
         $class = new ClassEntry($node->name);
+
+        //如果类已经声明的话,要怎么处理??
         $this->currentClass = $class;
         $this->compileChild($node, 'stmts');
         $this->currentClass = null;
         $this->opArray[] = new OpLines\ClassDef($node->getLine(), $class);
+
     }
 
     protected function compile_Stmt_Property($node) {
@@ -800,6 +804,7 @@ class Compiler {
         return $acc;
     }
 
+
     public function compile_Stmt_ClassConst($node) {
         foreach ($node->consts as $const) {
             $name = $const->name;
@@ -809,9 +814,14 @@ class Compiler {
         }
     }
 
+    //编译方法声明的
     protected function compile_Stmt_ClassMethod($node) {
+        //var_dump($node->name);
+        //编译方法体的
         $funcData = $this->compileFunction($node);
-        $this->currentClass->getMethodStore()->register($node->name, $funcData);
+        $this->currentClass
+        ->getMethodStore()
+        ->register($node->name, $funcData);
     }
 
     public function compile_Expr_New($node, $returnContext = null) {

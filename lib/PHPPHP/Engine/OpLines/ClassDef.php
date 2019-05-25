@@ -10,7 +10,9 @@ class ClassDef extends \PHPPHP\Engine\OpLine {
         $ce = $this->op1;
 
         //在全局的环境的类数组中添加一个类的信息
-        $data->executor->getClassStore()->register($ce);
+        $data->executor
+        ->getClassStore()
+        ->register($ce);
 
         $data->nextOp();
     }

@@ -11,6 +11,8 @@ class ClassStore {
     public function register(ClassEntry $ce) {
         $lcname = strtolower($ce->getName());
         if (isset($this->classes[$lcname])) {
+            echo sprintf("[WARN]: Class %s already defined", $ce->getName()),PHP_EOL;
+            return;
             throw new \RuntimeException(sprintf("Class %s already defined", $ce->getName()));
         }
         $this->classes[$lcname] = $ce;

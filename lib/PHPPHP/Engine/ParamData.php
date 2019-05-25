@@ -4,9 +4,9 @@ namespace PHPPHP\Engine;
 
 class ParamData {
 
-    public $name;
-    public $isOptional = false;
-    public $isRef = false;
+    public $name;//参数名称
+    public $isOptional = false;//是否是可选参数
+    public $isRef = false;//是否是引用类型的
     public $type = null;
     public $lineno = -1;
 

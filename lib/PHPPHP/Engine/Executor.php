@@ -121,6 +121,8 @@ class Executor {
 
     protected function compileCode(array $ast, $file) {
         try {
+            //var_dump($ast);exit;
+            /*通过AST再编译的*/
             return $this->compiler->compile($ast);
 
         } catch (CompileException $e) {

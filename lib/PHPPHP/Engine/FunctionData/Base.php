@@ -7,8 +7,8 @@ use PHPPHP\Engine;
 abstract class Base implements Engine\FunctionData {
 
     protected $name;
-    protected $byRef = false;
-    protected $params = array();
+    protected $byRef = false;//是否返回引用的??
+    protected $params = array();//参数列表
 
     public function setName($name) {
         $this->name = $name;
@@ -39,6 +39,7 @@ abstract class Base implements Engine\FunctionData {
         return '';
     }
 
+    /*参数检查的*/
     protected function checkParams(\PHPPHP\Engine\Executor $executor, array &$args, $checkTooMany = false) {
         $argNo = 0;
         $required = 0;
