@@ -1,0 +1,41 @@
+➜  PHPPHP git:(phpdev_01) ✗ php -dvld.active=1 test/class1.php >> class1.php.vld.log
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/z/php/PHPPHP/test/class1.php
+function name:  (null)
+number of ops:  11
+compiled vars:  !0 = $obj1, !1 = $r
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  16     0  E >   NOP                                                      
+  23     1        NEW                                              $3      :-5
+         2        DO_FCALL                                      0          
+         3        ASSIGN                                                   !0, $3
+  41     4        INIT_METHOD_CALL                                         !0, 'a1'
+         5        DO_FCALL                                      0  $6      
+         6        ASSIGN                                                   !1, $6
+  43     7        INIT_FCALL                                               'var_dump'
+         8        SEND_VAR                                                 !1
+         9        DO_FCALL                                      0          
+        10      > RETURN                                                   1
+
+Class a:
+Function a1:
+Finding entry points
+Branch analysis from position: 0
+1 jumps found. (Code = 62) Position 1 = -2
+filename:       /home/z/php/PHPPHP/test/class1.php
+function name:  a1
+number of ops:  2
+compiled vars:  none
+line     #* E I O op                           fetch          ext  return  operands
+-------------------------------------------------------------------------------------
+  18     0  E > > RETURN                                                   'a-%3Ea1'
+  19     1*     > RETURN                                                   null
+
+End of function a1
+
+End of class a.
+
+➜  PHPPHP git:(phpdev_01) ✗ php -dvld.active=1 test/class1.php >> class1.php.vld.log

@@ -1,0 +1,636 @@
+PHPPHP\PHP::executeFile,/home/z/php/PHPPHP/test/class1.php
+string(10) "Stmt_Class"
+string(16) "Stmt_ClassMethod"
+string(11) "Stmt_Return"
+string(13) "Scalar_String"
+string(10) "Stmt_Class"
+string(16) "Stmt_ClassMethod"
+string(11) "Stmt_Return"
+string(13) "Scalar_String"
+string(11) "Expr_Assign"
+string(13) "Expr_Variable"
+string(8) "Expr_New"
+string(10) "Stmt_Class"
+string(16) "Stmt_ClassMethod"
+string(11) "Stmt_Return"
+string(13) "Scalar_String"
+string(13) "Expr_FuncCall"
+string(4) "Name"
+string(15) "Expr_MethodCall"
+string(13) "Expr_Variable"
+PHPPHP\Engine\OpArray Object
+(
+    [opLines:protected] => Array
+        (
+            [0] => PHPPHP\Engine\OpLines\ClassDef Object
+                (
+                    [op1] => PHPPHP\Engine\Objects\ClassEntry Object
+                        (
+                            [name:PHPPHP\Engine\Objects\ClassEntry:private] => a
+                            [properties:PHPPHP\Engine\Objects\ClassEntry:private] => Array
+                                (
+                                )
+
+                            [methods:PHPPHP\Engine\Objects\ClassEntry:private] => PHPPHP\Engine\FunctionStore Object
+                                (
+                                    [functions:protected] => Array
+                                        (
+                                            [a2] => PHPPHP\Engine\FunctionData\User Object
+                                                (
+                                                    [opArray:protected] => PHPPHP\Engine\OpArray Object
+                                                        (
+                                                            [opLines:protected] => Array
+                                                                (
+                                                                    [0] => PHPPHP\Engine\OpLines\ReturnOp Object
+                                                                        (
+                                                                            [op1] => PHPPHP\Engine\Zval\Ptr Object
+                                                                                (
+                                                                                    [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                                                                        (
+                                                                                            [value:protected] => a->a2
+                                                                                            [refcount:protected] => 1
+                                                                                            [isRef:protected] => 
+                                                                                            [dtorFunc:protected] => 
+                                                                                        )
+
+                                                                                )
+
+                                                                            [op2] => 
+                                                                            [result] => PHPPHP\Engine\Zval\Ptr Object
+                                                                                (
+                                                                                    [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                                                                        (
+                                                                                            [value:protected] => 
+                                                                                            [refcount:protected] => 2
+                                                                                            [isRef:protected] => 
+                                                                                            [dtorFunc:protected] => 
+                                                                                        )
+
+                                                                                )
+
+                                                                            [lineno] => 11
+                                                                        )
+
+                                                                    [1] => PHPPHP\Engine\OpLines\ReturnOp Object
+                                                                        (
+                                                                            [op1] => 
+                                                                            [op2] => 
+                                                                            [result] => 
+                                                                            [lineno] => 10
+                                                                        )
+
+                                                                )
+
+                                                            [numOps:protected] => 2
+                                                            [compiledVariables:protected] => Array
+                                                                (
+                                                                )
+
+                                                            [executor:protected] => 
+                                                            [breakContinueInfo:protected] => Array
+                                                                (
+                                                                )
+
+                                                            [currentBCPos:protected] => -1
+                                                            [numBC:protected] => 0
+                                                            [fileName:protected] => /home/z/php/PHPPHP/test/class1.php
+                                                        )
+
+                                                    [byRef:protected] => 
+                                                    [params:protected] => Array
+                                                        (
+                                                        )
+
+                                                    [name:protected] => a2
+                                                )
+
+                                        )
+
+                                )
+
+                            [constants:PHPPHP\Engine\Objects\ClassEntry:private] => PHPPHP\Engine\ConstantStore Object
+                                (
+                                    [constants:protected] => Array
+                                        (
+                                        )
+
+                                )
+
+                            [parent:PHPPHP\Engine\Objects\ClassEntry:private] => 
+                            [staticProperties] => Array
+                                (
+                                )
+
+                        )
+
+                    [op2] => 
+                    [result] => 
+                    [lineno] => 9
+                )
+
+            [1] => PHPPHP\Engine\OpLines\ClassDef Object
+                (
+                    [op1] => PHPPHP\Engine\Objects\ClassEntry Object
+                        (
+                            [name:PHPPHP\Engine\Objects\ClassEntry:private] => a
+                            [properties:PHPPHP\Engine\Objects\ClassEntry:private] => Array
+                                (
+                                )
+
+                            [methods:PHPPHP\Engine\Objects\ClassEntry:private] => PHPPHP\Engine\FunctionStore Object
+                                (
+                                    [functions:protected] => Array
+                                        (
+                                            [a1] => PHPPHP\Engine\FunctionData\User Object
+                                                (
+                                                    [opArray:protected] => PHPPHP\Engine\OpArray Object
+                                                        (
+                                                            [opLines:protected] => Array
+                                                                (
+                                                                    [0] => PHPPHP\Engine\OpLines\ReturnOp Object
+                                                                        (
+                                                                            [op1] => PHPPHP\Engine\Zval\Ptr Object
+                                                                                (
+                                                                                    [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                                                                        (
+                                                                                            [value:protected] => a->a1
+                                                                                            [refcount:protected] => 1
+                                                                                            [isRef:protected] => 
+                                                                                            [dtorFunc:protected] => 
+                                                                                        )
+
+                                                                                )
+
+                                                                            [op2] => 
+                                                                            [result] => PHPPHP\Engine\Zval\Ptr Object
+                                                                                (
+                                                                                    [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                                                                        (
+                                                                                            [value:protected] => 
+                                                                                            [refcount:protected] => 2
+                                                                                            [isRef:protected] => 
+                                                                                            [dtorFunc:protected] => 
+                                                                                        )
+
+                                                                                )
+
+                                                                            [lineno] => 18
+                                                                        )
+
+                                                                    [1] => PHPPHP\Engine\OpLines\ReturnOp Object
+                                                                        (
+                                                                            [op1] => 
+                                                                            [op2] => 
+                                                                            [result] => 
+                                                                            [lineno] => 17
+                                                                        )
+
+                                                                )
+
+                                                            [numOps:protected] => 2
+                                                            [compiledVariables:protected] => Array
+                                                                (
+                                                                )
+
+                                                            [executor:protected] => 
+                                                            [breakContinueInfo:protected] => Array
+                                                                (
+                                                                )
+
+                                                            [currentBCPos:protected] => -1
+                                                            [numBC:protected] => 0
+                                                            [fileName:protected] => /home/z/php/PHPPHP/test/class1.php
+                                                        )
+
+                                                    [byRef:protected] => 
+                                                    [params:protected] => Array
+                                                        (
+                                                        )
+
+                                                    [name:protected] => a1
+                                                )
+
+                                        )
+
+                                )
+
+                            [constants:PHPPHP\Engine\Objects\ClassEntry:private] => PHPPHP\Engine\ConstantStore Object
+                                (
+                                    [constants:protected] => Array
+                                        (
+                                        )
+
+                                )
+
+                            [parent:PHPPHP\Engine\Objects\ClassEntry:private] => 
+                            [staticProperties] => Array
+                                (
+                                )
+
+                        )
+
+                    [op2] => 
+                    [result] => 
+                    [lineno] => 16
+                )
+
+            [2] => PHPPHP\Engine\OpLines\NewOp Object
+                (
+                    [noConstructorJumpOffset] => 4
+                    [op1] => PHPPHP\Engine\Zval\Ptr Object
+                        (
+                            [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                (
+                                    [value:protected] => a
+                                    [refcount:protected] => 2
+                                    [isRef:protected] => 
+                                    [dtorFunc:protected] => 
+                                )
+
+                        )
+
+                    [op2] => 
+                    [result] => PHPPHP\Engine\Zval\Ptr Object
+                        (
+                            [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                (
+                                    [value:protected] => 
+                                    [refcount:protected] => 2
+                                    [isRef:protected] => 
+                                    [dtorFunc:protected] => 
+                                )
+
+                        )
+
+                    [lineno] => 23
+                )
+
+            [3] => PHPPHP\Engine\OpLines\FunctionCall Object
+                (
+                    [op1] => 
+                    [op2] => PHPPHP\Engine\Zval\Ptr Object
+                        (
+                            [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                (
+                                    [value:protected] => 
+                                    [refcount:protected] => 2
+                                    [isRef:protected] => 
+                                    [dtorFunc:protected] => 
+                                )
+
+                        )
+
+                    [result] => PHPPHP\Engine\Zval\Ptr Object
+                        (
+                            [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                (
+                                    [value:protected] => 
+                                    [refcount:protected] => 2
+                                    [isRef:protected] => 
+                                    [dtorFunc:protected] => 
+                                )
+
+                        )
+
+                    [lineno] => 23
+                )
+
+            [4] => PHPPHP\Engine\OpLines\Assign Object
+                (
+                    [dim] => 
+                    [property] => 
+                    [op1] => PHPPHP\Engine\Zval\Ptr Object
+                        (
+                            [zval:protected] => PHPPHP\Engine\Zval\Variable Object
+                                (
+                                    [name:protected] => PHPPHP\Engine\Zval\Ptr Object
+                                        (
+                                            [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                                (
+                                                    [value:protected] => obj1
+                                                    [refcount:protected] => 1
+                                                    [isRef:protected] => 
+                                                    [dtorFunc:protected] => 
+                                                )
+
+                                        )
+
+                                    [class:protected] => 
+                                    [zval:protected] => 
+                                    [executor:protected] => 
+                                    [scope] => 1
+                                )
+
+                        )
+
+                    [op2] => PHPPHP\Engine\Zval\Ptr Object
+                        (
+                            [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                (
+                                    [value:protected] => 
+                                    [refcount:protected] => 2
+                                    [isRef:protected] => 
+                                    [dtorFunc:protected] => 
+                                )
+
+                        )
+
+                    [result] => 
+                    [lineno] => 23
+                )
+
+            [5] => PHPPHP\Engine\OpLines\ClassDef Object
+                (
+                    [op1] => PHPPHP\Engine\Objects\ClassEntry Object
+                        (
+                            [name:PHPPHP\Engine\Objects\ClassEntry:private] => a
+                            [properties:PHPPHP\Engine\Objects\ClassEntry:private] => Array
+                                (
+                                )
+
+                            [methods:PHPPHP\Engine\Objects\ClassEntry:private] => PHPPHP\Engine\FunctionStore Object
+                                (
+                                    [functions:protected] => Array
+                                        (
+                                            [a3] => PHPPHP\Engine\FunctionData\User Object
+                                                (
+                                                    [opArray:protected] => PHPPHP\Engine\OpArray Object
+                                                        (
+                                                            [opLines:protected] => Array
+                                                                (
+                                                                    [0] => PHPPHP\Engine\OpLines\ReturnOp Object
+                                                                        (
+                                                                            [op1] => PHPPHP\Engine\Zval\Ptr Object
+                                                                                (
+                                                                                    [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                                                                        (
+                                                                                            [value:protected] => a->a3
+                                                                                            [refcount:protected] => 1
+                                                                                            [isRef:protected] => 
+                                                                                            [dtorFunc:protected] => 
+                                                                                        )
+
+                                                                                )
+
+                                                                            [op2] => 
+                                                                            [result] => PHPPHP\Engine\Zval\Ptr Object
+                                                                                (
+                                                                                    [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                                                                        (
+                                                                                            [value:protected] => 
+                                                                                            [refcount:protected] => 2
+                                                                                            [isRef:protected] => 
+                                                                                            [dtorFunc:protected] => 
+                                                                                        )
+
+                                                                                )
+
+                                                                            [lineno] => 30
+                                                                        )
+
+                                                                    [1] => PHPPHP\Engine\OpLines\ReturnOp Object
+                                                                        (
+                                                                            [op1] => 
+                                                                            [op2] => 
+                                                                            [result] => 
+                                                                            [lineno] => 29
+                                                                        )
+
+                                                                )
+
+                                                            [numOps:protected] => 2
+                                                            [compiledVariables:protected] => Array
+                                                                (
+                                                                )
+
+                                                            [executor:protected] => 
+                                                            [breakContinueInfo:protected] => Array
+                                                                (
+                                                                )
+
+                                                            [currentBCPos:protected] => -1
+                                                            [numBC:protected] => 0
+                                                            [fileName:protected] => /home/z/php/PHPPHP/test/class1.php
+                                                        )
+
+                                                    [byRef:protected] => 
+                                                    [params:protected] => Array
+                                                        (
+                                                        )
+
+                                                    [name:protected] => a3
+                                                )
+
+                                        )
+
+                                )
+
+                            [constants:PHPPHP\Engine\Objects\ClassEntry:private] => PHPPHP\Engine\ConstantStore Object
+                                (
+                                    [constants:protected] => Array
+                                        (
+                                        )
+
+                                )
+
+                            [parent:PHPPHP\Engine\Objects\ClassEntry:private] => 
+                            [staticProperties] => Array
+                                (
+                                )
+
+                        )
+
+                    [op2] => 
+                    [result] => 
+                    [lineno] => 28
+                )
+
+            [6] => PHPPHP\Engine\OpLines\InitFCallByName Object
+                (
+                    [op1] => PHPPHP\Engine\Zval\Ptr Object
+                        (
+                            [zval:protected] => PHPPHP\Engine\Zval\Variable Object
+                                (
+                                    [name:protected] => PHPPHP\Engine\Zval\Ptr Object
+                                        (
+                                            [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                                (
+                                                    [value:protected] => obj1
+                                                    [refcount:protected] => 1
+                                                    [isRef:protected] => 
+                                                    [dtorFunc:protected] => 
+                                                )
+
+                                        )
+
+                                    [class:protected] => 
+                                    [zval:protected] => 
+                                    [executor:protected] => 
+                                    [scope] => 1
+                                )
+
+                        )
+
+                    [op2] => PHPPHP\Engine\Zval\Ptr Object
+                        (
+                            [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                (
+                                    [value:protected] => a1
+                                    [refcount:protected] => 1
+                                    [isRef:protected] => 
+                                    [dtorFunc:protected] => 
+                                )
+
+                        )
+
+                    [result] => 
+                    [lineno] => 42
+                )
+
+            [7] => PHPPHP\Engine\OpLines\FunctionCall Object
+                (
+                    [op1] => 
+                    [op2] => 
+                    [result] => PHPPHP\Engine\Zval\Ptr Object
+                        (
+                            [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                (
+                                    [value:protected] => 
+                                    [refcount:protected] => 2
+                                    [isRef:protected] => 
+                                    [dtorFunc:protected] => 
+                                )
+
+                        )
+
+                    [lineno] => 42
+                )
+
+            [8] => PHPPHP\Engine\OpLines\InitFCallByName Object
+                (
+                    [op1] => 
+                    [op2] => PHPPHP\Engine\Zval\Ptr Object
+                        (
+                            [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                (
+                                    [value:protected] => var_dump
+                                    [refcount:protected] => 1
+                                    [isRef:protected] => 
+                                    [dtorFunc:protected] => 
+                                )
+
+                        )
+
+                    [result] => 
+                    [lineno] => 42
+                )
+
+            [9] => PHPPHP\Engine\OpLines\Send Object
+                (
+                    [op1] => PHPPHP\Engine\Zval\Ptr Object
+                        (
+                            [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                (
+                                    [value:protected] => 
+                                    [refcount:protected] => 2
+                                    [isRef:protected] => 
+                                    [dtorFunc:protected] => 
+                                )
+
+                        )
+
+                    [op2] => PHPPHP\Engine\Zval\Value Object
+                        (
+                            [value:protected] => 0
+                            [refcount:protected] => 1
+                            [isRef:protected] => 
+                            [dtorFunc:protected] => 
+                        )
+
+                    [result] => 
+                    [lineno] => 42
+                )
+
+            [10] => PHPPHP\Engine\OpLines\FunctionCall Object
+                (
+                    [op1] => 
+                    [op2] => 
+                    [result] => PHPPHP\Engine\Zval\Ptr Object
+                        (
+                            [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                (
+                                    [value:protected] => 
+                                    [refcount:protected] => 2
+                                    [isRef:protected] => 
+                                    [dtorFunc:protected] => 
+                                )
+
+                        )
+
+                    [lineno] => 42
+                )
+
+            [11] => PHPPHP\Engine\OpLines\ReturnOp Object
+                (
+                    [op1] => 
+                    [op2] => 
+                    [result] => 
+                    [lineno] => 42
+                )
+
+        )
+
+    [numOps:protected] => 12
+    [compiledVariables:protected] => Array
+        (
+            [0] => PHPPHP\Engine\Zval\Variable Object
+                (
+                    [name:protected] => PHPPHP\Engine\Zval\Ptr Object
+                        (
+                            [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                (
+                                    [value:protected] => obj1
+                                    [refcount:protected] => 1
+                                    [isRef:protected] => 
+                                    [dtorFunc:protected] => 
+                                )
+
+                        )
+
+                    [class:protected] => 
+                    [zval:protected] => 
+                    [executor:protected] => 
+                    [scope] => 1
+                )
+
+            [1] => PHPPHP\Engine\Zval\Variable Object
+                (
+                    [name:protected] => PHPPHP\Engine\Zval\Ptr Object
+                        (
+                            [zval:protected] => PHPPHP\Engine\Zval\Value Object
+                                (
+                                    [value:protected] => obj1
+                                    [refcount:protected] => 1
+                                    [isRef:protected] => 
+                                    [dtorFunc:protected] => 
+                                )
+
+                        )
+
+                    [class:protected] => 
+                    [zval:protected] => 
+                    [executor:protected] => 
+                    [scope] => 1
+                )
+
+        )
+
+    [executor:protected] => 
+    [breakContinueInfo:protected] => Array
+        (
+        )
+
+    [currentBCPos:protected] => -1
+    [numBC:protected] => 0
+    [fileName:protected] => /home/z/php/PHPPHP/test/class1.php
+)

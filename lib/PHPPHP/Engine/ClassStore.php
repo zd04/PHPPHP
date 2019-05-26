@@ -10,13 +10,22 @@ class ClassStore {
 
     public function register(ClassEntry $ce) {
         $lcname = strtolower($ce->getName());
+        var_dump("classregister",$lcname);
         if (isset($this->classes[$lcname])) {
             echo sprintf("[WARN]: Class %s already defined", $ce->getName()),PHP_EOL;
+
+            //$this->classes[$lcname] = $this->classMerge($this->classes[$lcname],$ce);
             return;
             throw new \RuntimeException(sprintf("Class %s already defined", $ce->getName()));
         }
         $this->classes[$lcname] = $ce;
     }
+
+    /*merge*/
+    //public function classMerge(ClassEntry $old, ClassEntry $ce){
+    //    var_dump("classMerge",$old->merge($ce));
+    //    return $old->merge($ce);
+    //}
 
     public function exists($name) {
         return isset($this->classes[strtolower($name)]);

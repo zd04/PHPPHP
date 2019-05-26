@@ -137,7 +137,7 @@ class Compiler {
         $opArray[] = new OpLines\ReturnOp(end($ast)->getLine());
 
         unset($this->opArray);
-        DEBUG && var_dump($opArray);//exit;
+        //DEBUG && var_dump($opArray);//exit;
         return $opArray;
     }
 
@@ -767,7 +767,9 @@ class Compiler {
     }
 
     protected function compile_Stmt_Class($node) {
+        //在这个地方已经保存了class的指针的信息了
         $class = new ClassEntry($node->name);
+        //var_dump($node->stmts);exit;
 
         //如果类已经声明的话,要怎么处理??
         $this->currentClass = $class;
@@ -816,9 +818,12 @@ class Compiler {
 
     //编译方法声明的
     protected function compile_Stmt_ClassMethod($node) {
-        //var_dump($node->name);
+        //向类的指针中添加方法到方法表中
+        //var_dump($this->currentClass->getName()."->".$node->name);//exit;
         //编译方法体的
         $funcData = $this->compileFunction($node);
+
+        //当前操作的类的信息
         $this->currentClass
         ->getMethodStore()
         ->register($node->name, $funcData);
@@ -850,8 +855,10 @@ class Compiler {
     }
 
     protected function compileFunction($node) {
+        //编译方法就是要开启一个新的opArray链表的
         $prevOpArray = $this->opArray;//前一个opArray就是当前的opArray
 
+        //开一个新的环境
         $this->opArray = new OpArray($this->fileName);
 
         $params = array();

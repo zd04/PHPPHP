@@ -4,6 +4,7 @@ error_reporting(E_ALL | E_STRICT);
 
 require_once __DIR__ . '/vendor/autoload.php';
 
+//$argv[0] = "test/class1.php";
 /**
  * 输出日志的
  * @param  [type] $msg [description]

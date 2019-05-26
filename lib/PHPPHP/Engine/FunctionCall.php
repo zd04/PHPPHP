@@ -17,11 +17,18 @@ class FunctionCall {
 
     public function getName() {
         if ($this->ci) {
-            return $this->ci->getClassEntry()->getMethodStore()->getName($this->function);
+            return $this->ci
+            ->getClassEntry()
+            ->getMethodStore()
+            ->getName($this->function);
         } else if ($this->ce) {
-            return $this->ce->getMethodStore()->getName($this->function);
+            return $this->ce
+            ->getMethodStore()
+            ->getName($this->function);
         } else {
-            return $this->executor->getFunctionStore()->getName($this->function);
+            return $this->executor
+            ->getFunctionStore()
+            ->getName($this->function);
         }
     }
 

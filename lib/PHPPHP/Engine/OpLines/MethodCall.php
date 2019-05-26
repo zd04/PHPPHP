@@ -14,6 +14,7 @@ class MethodCall extends \PHPPHP\Engine\OpLine {
         $object = $this->objectOp->toObject($data);
         $methodName = $this->op1->toString();
         $args = $this->op2->toArray();
+        //var_dump("MethodCall::execute");exit;
         $object->callMethod($data, $methodName, $args, $this->result);
         $data->nextOp();
     }

@@ -17,15 +17,18 @@ class FunctionStore {
         }
         $func->setName($name);
         $this->functions[$name] = $func;
+
+        //var_dump("name:".$name,"FunctionData");
     }
 
-    public function exists($name) {
+    public function exists($name) {       
         return isset($this->functions[strtolower($name)]);
     }
 
     public function get($name) {
         $name = strtolower($name);
         if (!isset($this->functions[$name])) {
+            //var_dump("function::exists",$this->functions);exit;
             throw new \RuntimeException(sprintf('Call to undefined function %s', $name));
         }
 
@@ -40,4 +43,8 @@ class FunctionStore {
         }
         return '';
     }
+
+    //public function getFunctions(){
+    //    return $this->functions;
+    //}
 }

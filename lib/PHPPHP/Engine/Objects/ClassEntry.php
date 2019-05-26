@@ -29,6 +29,23 @@ class ClassEntry
         $this->parent = $parent;
     }
 
+    /**
+     * 
+     * @param  ClassEntry $ce [description]
+     * @return [type]         [description]
+     */
+    public function merge(ClassEntry $ce){
+        //$this->methods->merge($ce->getMethodStore());
+        $fns = $ce->getMethodStore()->getFunctions();
+        //var_dump($fns);exit;
+
+        foreach ($fns as $name => $functionData) {
+            $this->methods->register($name,$functionData);
+        }
+
+        return $this;
+    }
+
     public function isInstanceOf($name) {
         $parent = $this;
         $name = strtolower($name);
@@ -103,6 +120,11 @@ class ClassEntry
     }
 
     public function findMethod($name) {
+        //global $tttt;
+        //if($this->name == 'a'){
+        //    $tttt = 1;
+        //}
+        //var_dump("findMethod",$this->name);exit;
         $parent = $this;
         do {
             $exists = $parent->methods->exists($name);
@@ -117,7 +139,7 @@ class ClassEntry
 
     public function callMethod(ExecuteData $data, ClassInstance $ci = null, $name = '', array $args = array(), Ptr $result = null)
     {
-        $method = $this->findMethod($name);
+        $method = $this->findMethod($name);var_dump("findMethod",$this->name);exit;
         if (!$result) {
             $result = Zval::ptrFactory();
         }

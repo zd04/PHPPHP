@@ -10,7 +10,9 @@ class FunctionDef extends \PHPPHP\Engine\OpLine {
         $name = $this->op1->toString();
         $functionData = $this->op2;
 
-        $data->executor->getFunctionStore()->register($name, $functionData);
+        $data->executor
+        ->getFunctionStore()
+        ->register($name, $functionData);
 
         $data->nextOp();
     }
