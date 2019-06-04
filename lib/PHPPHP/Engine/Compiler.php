@@ -491,6 +491,8 @@ class Compiler {
         if (is_string($node->name) && in_array($name->getValue(), $this->autoGlobals)) {
             $scope = Variable::SCOPE_GLOBAL;
         }
+        //var_dump($scope,$name);
+        /*这个地方是局部变量的，局部变量又分静态变量和非静态变量的*/
         $variable = Zval::variableFactory($name, null, $scope);
 
         /*有一个栈保存当前环境编译的变量*/

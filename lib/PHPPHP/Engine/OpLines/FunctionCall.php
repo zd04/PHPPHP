@@ -18,6 +18,7 @@ class FunctionCall extends \PHPPHP\Engine\OpLine {
         /**翻转顺序的*/
         $args = array_reverse($args);
 
+        //var_dump($args);
         if (!$this->result) {
             $this->result = Zval::ptrFactory();
         }

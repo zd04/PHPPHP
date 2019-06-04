@@ -1,14 +1,19 @@
 <?php 
 
-$af = function(){
+// $af = function(){
 
-};
+// };
 
-$af();
+// $af();
 
 
 $af = function(&$c){
-	$a = 100;
+	static $a;
+
+	if(empty($a)){
+		$a = 100;
+	}
+	
 	echo $a,PHP_EOL;
 
 	$c = 200;
@@ -16,4 +21,6 @@ $af = function(&$c){
 
 
 $b = 0;
+$af($b);
+
 $af($b);

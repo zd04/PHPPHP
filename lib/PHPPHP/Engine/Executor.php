@@ -124,7 +124,7 @@ class Executor {
 
     protected function compileCode(array $ast, $file) {
         try {
-            var_dump($ast);exit;
+            //var_dump($ast);exit;
             /*通过AST再编译的*/
             return $this->compiler->compile($ast);
 
@@ -164,6 +164,7 @@ class Executor {
 
         //echo __METHOD__,PHP_EOL;
         //var_dump($this);
+        var_dump($opArray);exit;
 
         $scope = new ExecuteData($this, $opArray, $function);/*运行环境的的变量信息*/
         $scope->arguments = $args;
