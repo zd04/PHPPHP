@@ -1,0 +1,88 @@
+PHPPHP\PHP::executeFile,/mnt/hgfs/wwwroot/PHPPHP/test/col1.php
+array(2) {
+  [0]=>
+  object(PHPParser_Node_Expr_Assign)#3331 (2) {
+    ["subNodes":protected]=>
+    array(2) {
+      ["var"]=>
+      object(PHPParser_Node_Expr_Variable)#3330 (2) {
+        ["subNodes":protected]=>
+        array(1) {
+          ["name"]=>
+          string(2) "af"
+        }
+        ["attributes":protected]=>
+        array(2) {
+          ["startLine"]=>
+          int(3)
+          ["endLine"]=>
+          int(3)
+        }
+      }
+      ["expr"]=>
+      object(PHPParser_Node_Expr_Closure)#3297 (2) {
+        ["subNodes":protected]=>
+        array(5) {
+          ["static"]=>
+          bool(false)
+          ["byRef"]=>
+          bool(false)
+          ["params"]=>
+          array(0) {
+          }
+          ["uses"]=>
+          array(0) {
+          }
+          ["stmts"]=>
+          array(0) {
+          }
+        }
+        ["attributes":protected]=>
+        array(2) {
+          ["startLine"]=>
+          int(3)
+          ["endLine"]=>
+          int(5)
+        }
+      }
+    }
+    ["attributes":protected]=>
+    array(2) {
+      ["startLine"]=>
+      int(3)
+      ["endLine"]=>
+      int(5)
+    }
+  }
+  [1]=>
+  object(PHPParser_Node_Expr_FuncCall)#3296 (2) {
+    ["subNodes":protected]=>
+    array(2) {
+      ["name"]=>
+      object(PHPParser_Node_Expr_Variable)#3292 (2) {
+        ["subNodes":protected]=>
+        array(1) {
+          ["name"]=>
+          string(2) "af"
+        }
+        ["attributes":protected]=>
+        array(2) {
+          ["startLine"]=>
+          int(7)
+          ["endLine"]=>
+          int(7)
+        }
+      }
+      ["args"]=>
+      array(0) {
+      }
+    }
+    ["attributes":protected]=>
+    array(2) {
+      ["startLine"]=>
+      int(7)
+      ["endLine"]=>
+      int(7)
+    }
+  }
+}

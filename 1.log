@@ -1,0 +1,699 @@
+string(13) "classregister"
+string(8) "stdclass"
+string(13) "classregister"
+string(7) "closure"
+PHPPHP\PHP::executeFile,/mnt/hgfs/wwwroot/PHPPHP/test/class1.php
+string(7) "complie"
+array(6) {
+  [0]=>
+  object(PHPParser_Node_Stmt_Class)#2865 (2) {
+    ["subNodes":protected]=>
+    array(6) {
+      ["type"]=>
+      int(0)
+      ["extends"]=>
+      NULL
+      ["implements"]=>
+      array(0) {
+      }
+      ["stmts"]=>
+      array(1) {
+        [0]=>
+        object(PHPParser_Node_Stmt_ClassMethod)#2723 (2) {
+          ["subNodes":protected]=>
+          array(5) {
+            ["type"]=>
+            int(1)
+            ["byRef"]=>
+            bool(false)
+            ["params"]=>
+            array(0) {
+            }
+            ["stmts"]=>
+            array(1) {
+              [0]=>
+              object(PHPParser_Node_Stmt_Return)#2722 (2) {
+                ["subNodes":protected]=>
+                array(1) {
+                  ["expr"]=>
+                  object(PHPParser_Node_Scalar_String)#2721 (2) {
+                    ["subNodes":protected]=>
+                    array(1) {
+                      ["value"]=>
+                      string(5) "a->a2"
+                    }
+                    ["attributes":protected]=>
+                    array(2) {
+                      ["startLine"]=>
+                      int(11)
+                      ["endLine"]=>
+                      int(11)
+                    }
+                  }
+                }
+                ["attributes":protected]=>
+                array(2) {
+                  ["startLine"]=>
+                  int(11)
+                  ["endLine"]=>
+                  int(11)
+                }
+              }
+            }
+            ["name"]=>
+            string(2) "a2"
+          }
+          ["attributes":protected]=>
+          array(2) {
+            ["startLine"]=>
+            int(10)
+            ["endLine"]=>
+            int(12)
+          }
+        }
+      }
+      ["name"]=>
+      string(1) "a"
+      ["namespacedName"]=>
+      object(PHPParser_Node_Name)#2690 (2) {
+        ["subNodes":protected]=>
+        array(1) {
+          ["parts"]=>
+          array(1) {
+            [0]=>
+            string(1) "a"
+          }
+        }
+        ["attributes":protected]=>
+        array(3) {
+          ["comments"]=>
+          array(1) {
+            [0]=>
+            object(PHPParser_Comment)#3348 (2) {
+              ["text":protected]=>
+              string(43) "/*
+var_dump(bb());
+require "func1.php";
+
+*/"
+              ["line":protected]=>
+              int(3)
+            }
+          }
+          ["startLine"]=>
+          int(9)
+          ["endLine"]=>
+          int(13)
+        }
+      }
+    }
+    ["attributes":protected]=>
+    array(3) {
+      ["comments"]=>
+      array(1) {
+        [0]=>
+        object(PHPParser_Comment)#3348 (2) {
+          ["text":protected]=>
+          string(43) "/*
+var_dump(bb());
+require "func1.php";
+
+*/"
+          ["line":protected]=>
+          int(3)
+        }
+      }
+      ["startLine"]=>
+      int(9)
+      ["endLine"]=>
+      int(13)
+    }
+  }
+  [1]=>
+  object(PHPParser_Node_Stmt_Class)#2688 (2) {
+    ["subNodes":protected]=>
+    array(6) {
+      ["type"]=>
+      int(0)
+      ["extends"]=>
+      NULL
+      ["implements"]=>
+      array(0) {
+      }
+      ["stmts"]=>
+      array(1) {
+        [0]=>
+        object(PHPParser_Node_Stmt_ClassMethod)#2687 (2) {
+          ["subNodes":protected]=>
+          array(5) {
+            ["type"]=>
+            int(1)
+            ["byRef"]=>
+            bool(false)
+            ["params"]=>
+            array(0) {
+            }
+            ["stmts"]=>
+            array(1) {
+              [0]=>
+              object(PHPParser_Node_Stmt_Return)#2686 (2) {
+                ["subNodes":protected]=>
+                array(1) {
+                  ["expr"]=>
+                  object(PHPParser_Node_Scalar_String)#2685 (2) {
+                    ["subNodes":protected]=>
+                    array(1) {
+                      ["value"]=>
+                      string(5) "a->a1"
+                    }
+                    ["attributes":protected]=>
+                    array(2) {
+                      ["startLine"]=>
+                      int(18)
+                      ["endLine"]=>
+                      int(18)
+                    }
+                  }
+                }
+                ["attributes":protected]=>
+                array(2) {
+                  ["startLine"]=>
+                  int(18)
+                  ["endLine"]=>
+                  int(18)
+                }
+              }
+            }
+            ["name"]=>
+            string(2) "a1"
+          }
+          ["attributes":protected]=>
+          array(2) {
+            ["startLine"]=>
+            int(17)
+            ["endLine"]=>
+            int(19)
+          }
+        }
+      }
+      ["name"]=>
+      string(1) "a"
+      ["namespacedName"]=>
+      object(PHPParser_Node_Name)#2684 (2) {
+        ["subNodes":protected]=>
+        array(1) {
+          ["parts"]=>
+          array(1) {
+            [0]=>
+            string(1) "a"
+          }
+        }
+        ["attributes":protected]=>
+        array(2) {
+          ["startLine"]=>
+          int(16)
+          ["endLine"]=>
+          int(20)
+        }
+      }
+    }
+    ["attributes":protected]=>
+    array(2) {
+      ["startLine"]=>
+      int(16)
+      ["endLine"]=>
+      int(20)
+    }
+  }
+  [2]=>
+  object(PHPParser_Node_Stmt_Class)#2675 (2) {
+    ["subNodes":protected]=>
+    array(6) {
+      ["type"]=>
+      int(0)
+      ["extends"]=>
+      NULL
+      ["implements"]=>
+      array(0) {
+      }
+      ["stmts"]=>
+      array(1) {
+        [0]=>
+        object(PHPParser_Node_Stmt_ClassMethod)#2643 (2) {
+          ["subNodes":protected]=>
+          array(5) {
+            ["type"]=>
+            int(1)
+            ["byRef"]=>
+            bool(false)
+            ["params"]=>
+            array(0) {
+            }
+            ["stmts"]=>
+            array(1) {
+              [0]=>
+              object(PHPParser_Node_Stmt_Return)#2642 (2) {
+                ["subNodes":protected]=>
+                array(1) {
+                  ["expr"]=>
+                  object(PHPParser_Node_Scalar_String)#2641 (2) {
+                    ["subNodes":protected]=>
+                    array(1) {
+                      ["value"]=>
+                      string(5) "a->a3"
+                    }
+                    ["attributes":protected]=>
+                    array(2) {
+                      ["startLine"]=>
+                      int(30)
+                      ["endLine"]=>
+                      int(30)
+                    }
+                  }
+                }
+                ["attributes":protected]=>
+                array(2) {
+                  ["startLine"]=>
+                  int(30)
+                  ["endLine"]=>
+                  int(30)
+                }
+              }
+            }
+            ["name"]=>
+            string(2) "a3"
+          }
+          ["attributes":protected]=>
+          array(2) {
+            ["startLine"]=>
+            int(29)
+            ["endLine"]=>
+            int(31)
+          }
+        }
+      }
+      ["name"]=>
+      string(1) "a"
+      ["namespacedName"]=>
+      object(PHPParser_Node_Name)#2611 (2) {
+        ["subNodes":protected]=>
+        array(1) {
+          ["parts"]=>
+          array(1) {
+            [0]=>
+            string(1) "a"
+          }
+        }
+        ["attributes":protected]=>
+        array(3) {
+          ["comments"]=>
+          array(4) {
+            [0]=>
+            object(PHPParser_Comment)#3292 (2) {
+              ["text":protected]=>
+              string(61) "//类的声明不会提前,但是方法的声明会提前的
+"
+              ["line":protected]=>
+              int(22)
+            }
+            [1]=>
+            object(PHPParser_Comment)#3291 (2) {
+              ["text":protected]=>
+              string(20) "// $obj1 = new a();
+"
+              ["line":protected]=>
+              int(23)
+            }
+            [2]=>
+            object(PHPParser_Comment)#3261 (2) {
+              ["text":protected]=>
+              string(25) "//var_dump($obj1->a2());
+"
+              ["line":protected]=>
+              int(25)
+            }
+            [3]=>
+            object(PHPParser_Comment)#3260 (2) {
+              ["text":protected]=>
+              string(45) "//在对象的后面添加类对应的方法
+"
+              ["line":protected]=>
+              int(27)
+            }
+          }
+          ["startLine"]=>
+          int(28)
+          ["endLine"]=>
+          int(32)
+        }
+      }
+    }
+    ["attributes":protected]=>
+    array(3) {
+      ["comments"]=>
+      array(4) {
+        [0]=>
+        object(PHPParser_Comment)#3292 (2) {
+          ["text":protected]=>
+          string(61) "//类的声明不会提前,但是方法的声明会提前的
+"
+          ["line":protected]=>
+          int(22)
+        }
+        [1]=>
+        object(PHPParser_Comment)#3291 (2) {
+          ["text":protected]=>
+          string(20) "// $obj1 = new a();
+"
+          ["line":protected]=>
+          int(23)
+        }
+        [2]=>
+        object(PHPParser_Comment)#3261 (2) {
+          ["text":protected]=>
+          string(25) "//var_dump($obj1->a2());
+"
+          ["line":protected]=>
+          int(25)
+        }
+        [3]=>
+        object(PHPParser_Comment)#3260 (2) {
+          ["text":protected]=>
+          string(45) "//在对象的后面添加类对应的方法
+"
+          ["line":protected]=>
+          int(27)
+        }
+      }
+      ["startLine"]=>
+      int(28)
+      ["endLine"]=>
+      int(32)
+    }
+  }
+  [3]=>
+  object(PHPParser_Node_Expr_Assign)#2592 (2) {
+    ["subNodes":protected]=>
+    array(2) {
+      ["var"]=>
+      object(PHPParser_Node_Expr_Variable)#2591 (2) {
+        ["subNodes":protected]=>
+        array(1) {
+          ["name"]=>
+          string(4) "obj1"
+        }
+        ["attributes":protected]=>
+        array(2) {
+          ["startLine"]=>
+          int(34)
+          ["endLine"]=>
+          int(34)
+        }
+      }
+      ["expr"]=>
+      object(PHPParser_Node_Expr_New)#2987 (2) {
+        ["subNodes":protected]=>
+        array(2) {
+          ["class"]=>
+          object(PHPParser_Node_Name_FullyQualified)#2568 (2) {
+            ["subNodes":protected]=>
+            array(1) {
+              ["parts"]=>
+              array(1) {
+                [0]=>
+                string(1) "a"
+              }
+            }
+            ["attributes":protected]=>
+            array(2) {
+              ["startLine"]=>
+              int(34)
+              ["endLine"]=>
+              int(34)
+            }
+          }
+          ["args"]=>
+          array(0) {
+          }
+        }
+        ["attributes":protected]=>
+        array(2) {
+          ["startLine"]=>
+          int(34)
+          ["endLine"]=>
+          int(34)
+        }
+      }
+    }
+    ["attributes":protected]=>
+    array(2) {
+      ["startLine"]=>
+      int(34)
+      ["endLine"]=>
+      int(34)
+    }
+  }
+  [4]=>
+  object(PHPParser_Node_Expr_Assign)#2522 (2) {
+    ["subNodes":protected]=>
+    array(2) {
+      ["var"]=>
+      object(PHPParser_Node_Expr_Variable)#255 (2) {
+        ["subNodes":protected]=>
+        array(1) {
+          ["name"]=>
+          string(1) "r"
+        }
+        ["attributes":protected]=>
+        array(3) {
+          ["comments"]=>
+          array(7) {
+            [0]=>
+            object(PHPParser_Comment)#2984 (2) {
+              ["text":protected]=>
+              string(14) "// $code1 = "
+"
+              ["line":protected]=>
+              int(35)
+            }
+            [1]=>
+            object(PHPParser_Comment)#2983 (2) {
+              ["text":protected]=>
+              string(12) "// class a{
+"
+              ["line":protected]=>
+              int(36)
+            }
+            [2]=>
+            object(PHPParser_Comment)#2982 (2) {
+              ["text":protected]=>
+              string(26) "// 	public function a3(){
+"
+              ["line":protected]=>
+              int(37)
+            }
+            [3]=>
+            object(PHPParser_Comment)#2981 (2) {
+              ["text":protected]=>
+              string(21) "// 		return 'a->a3';
+"
+              ["line":protected]=>
+              int(38)
+            }
+            [4]=>
+            object(PHPParser_Comment)#2980 (2) {
+              ["text":protected]=>
+              string(6) "// 	}
+"
+              ["line":protected]=>
+              int(39)
+            }
+            [5]=>
+            object(PHPParser_Comment)#2979 (2) {
+              ["text":protected]=>
+              string(5) "// }
+"
+              ["line":protected]=>
+              int(40)
+            }
+            [6]=>
+            object(PHPParser_Comment)#2977 (2) {
+              ["text":protected]=>
+              string(6) "// ";
+"
+              ["line":protected]=>
+              int(41)
+            }
+          }
+          ["startLine"]=>
+          int(42)
+          ["endLine"]=>
+          int(42)
+        }
+      }
+      ["expr"]=>
+      object(PHPParser_Node_Expr_MethodCall)#254 (2) {
+        ["subNodes":protected]=>
+        array(3) {
+          ["var"]=>
+          object(PHPParser_Node_Expr_Variable)#250 (2) {
+            ["subNodes":protected]=>
+            array(1) {
+              ["name"]=>
+              string(4) "obj1"
+            }
+            ["attributes":protected]=>
+            array(2) {
+              ["startLine"]=>
+              int(42)
+              ["endLine"]=>
+              int(42)
+            }
+          }
+          ["name"]=>
+          string(2) "a1"
+          ["args"]=>
+          array(0) {
+          }
+        }
+        ["attributes":protected]=>
+        array(2) {
+          ["startLine"]=>
+          int(42)
+          ["endLine"]=>
+          int(42)
+        }
+      }
+    }
+    ["attributes":protected]=>
+    array(3) {
+      ["comments"]=>
+      array(7) {
+        [0]=>
+        object(PHPParser_Comment)#2984 (2) {
+          ["text":protected]=>
+          string(14) "// $code1 = "
+"
+          ["line":protected]=>
+          int(35)
+        }
+        [1]=>
+        object(PHPParser_Comment)#2983 (2) {
+          ["text":protected]=>
+          string(12) "// class a{
+"
+          ["line":protected]=>
+          int(36)
+        }
+        [2]=>
+        object(PHPParser_Comment)#2982 (2) {
+          ["text":protected]=>
+          string(26) "// 	public function a3(){
+"
+          ["line":protected]=>
+          int(37)
+        }
+        [3]=>
+        object(PHPParser_Comment)#2981 (2) {
+          ["text":protected]=>
+          string(21) "// 		return 'a->a3';
+"
+          ["line":protected]=>
+          int(38)
+        }
+        [4]=>
+        object(PHPParser_Comment)#2980 (2) {
+          ["text":protected]=>
+          string(6) "// 	}
+"
+          ["line":protected]=>
+          int(39)
+        }
+        [5]=>
+        object(PHPParser_Comment)#2979 (2) {
+          ["text":protected]=>
+          string(5) "// }
+"
+          ["line":protected]=>
+          int(40)
+        }
+        [6]=>
+        object(PHPParser_Comment)#2977 (2) {
+          ["text":protected]=>
+          string(6) "// ";
+"
+          ["line":protected]=>
+          int(41)
+        }
+      }
+      ["startLine"]=>
+      int(42)
+      ["endLine"]=>
+      int(42)
+    }
+  }
+  [5]=>
+  object(PHPParser_Node_Expr_FuncCall)#229 (2) {
+    ["subNodes":protected]=>
+    array(2) {
+      ["name"]=>
+      object(PHPParser_Node_Name)#219 (2) {
+        ["subNodes":protected]=>
+        array(1) {
+          ["parts"]=>
+          array(1) {
+            [0]=>
+            string(8) "var_dump"
+          }
+        }
+        ["attributes":protected]=>
+        array(2) {
+          ["startLine"]=>
+          int(44)
+          ["endLine"]=>
+          int(44)
+        }
+      }
+      ["args"]=>
+      array(1) {
+        [0]=>
+        object(PHPParser_Node_Arg)#217 (2) {
+          ["subNodes":protected]=>
+          array(2) {
+            ["value"]=>
+            object(PHPParser_Node_Expr_Variable)#216 (2) {
+              ["subNodes":protected]=>
+              array(1) {
+                ["name"]=>
+                string(1) "r"
+              }
+              ["attributes":protected]=>
+              array(2) {
+                ["startLine"]=>
+                int(44)
+                ["endLine"]=>
+                int(44)
+              }
+            }
+            ["byRef"]=>
+            bool(false)
+          }
+          ["attributes":protected]=>
+          array(2) {
+            ["startLine"]=>
+            int(44)
+            ["endLine"]=>
+            int(44)
+          }
+        }
+      }
+    }
+    ["attributes":protected]=>
+    array(2) {
+      ["startLine"]=>
+      int(44)
+      ["endLine"]=>
+      int(44)
+    }
+  }
+}

@@ -1,0 +1,278 @@
+PHPPHP\PHP::executeFile,/mnt/hgfs/wwwroot/PHPPHP/test/col1.php
+array(4) {
+  [0]=>
+  object(PHPParser_Node_Expr_Assign)#2988 (2) {
+    ["subNodes":protected]=>
+    array(2) {
+      ["var"]=>
+      object(PHPParser_Node_Expr_Variable)#2987 (2) {
+        ["subNodes":protected]=>
+        array(1) {
+          ["name"]=>
+          string(2) "af"
+        }
+        ["attributes":protected]=>
+        array(2) {
+          ["startLine"]=>
+          int(3)
+          ["endLine"]=>
+          int(3)
+        }
+      }
+      ["expr"]=>
+      object(PHPParser_Node_Expr_Closure)#2986 (2) {
+        ["subNodes":protected]=>
+        array(5) {
+          ["static"]=>
+          bool(false)
+          ["byRef"]=>
+          bool(false)
+          ["params"]=>
+          array(0) {
+          }
+          ["uses"]=>
+          array(0) {
+          }
+          ["stmts"]=>
+          array(0) {
+          }
+        }
+        ["attributes":protected]=>
+        array(2) {
+          ["startLine"]=>
+          int(3)
+          ["endLine"]=>
+          int(5)
+        }
+      }
+    }
+    ["attributes":protected]=>
+    array(2) {
+      ["startLine"]=>
+      int(3)
+      ["endLine"]=>
+      int(5)
+    }
+  }
+  [1]=>
+  object(PHPParser_Node_Expr_FuncCall)#2985 (2) {
+    ["subNodes":protected]=>
+    array(2) {
+      ["name"]=>
+      object(PHPParser_Node_Expr_Variable)#2984 (2) {
+        ["subNodes":protected]=>
+        array(1) {
+          ["name"]=>
+          string(2) "af"
+        }
+        ["attributes":protected]=>
+        array(2) {
+          ["startLine"]=>
+          int(7)
+          ["endLine"]=>
+          int(7)
+        }
+      }
+      ["args"]=>
+      array(0) {
+      }
+    }
+    ["attributes":protected]=>
+    array(2) {
+      ["startLine"]=>
+      int(7)
+      ["endLine"]=>
+      int(7)
+    }
+  }
+  [2]=>
+  object(PHPParser_Node_Expr_Assign)#2983 (2) {
+    ["subNodes":protected]=>
+    array(2) {
+      ["var"]=>
+      object(PHPParser_Node_Expr_Variable)#2982 (2) {
+        ["subNodes":protected]=>
+        array(1) {
+          ["name"]=>
+          string(2) "af"
+        }
+        ["attributes":protected]=>
+        array(2) {
+          ["startLine"]=>
+          int(10)
+          ["endLine"]=>
+          int(10)
+        }
+      }
+      ["expr"]=>
+      object(PHPParser_Node_Expr_Closure)#2981 (2) {
+        ["subNodes":protected]=>
+        array(5) {
+          ["static"]=>
+          bool(false)
+          ["byRef"]=>
+          bool(false)
+          ["params"]=>
+          array(0) {
+          }
+          ["uses"]=>
+          array(0) {
+          }
+          ["stmts"]=>
+          array(2) {
+            [0]=>
+            object(PHPParser_Node_Expr_Assign)#2980 (2) {
+              ["subNodes":protected]=>
+              array(2) {
+                ["var"]=>
+                object(PHPParser_Node_Expr_Variable)#2979 (2) {
+                  ["subNodes":protected]=>
+                  array(1) {
+                    ["name"]=>
+                    string(1) "a"
+                  }
+                  ["attributes":protected]=>
+                  array(2) {
+                    ["startLine"]=>
+                    int(11)
+                    ["endLine"]=>
+                    int(11)
+                  }
+                }
+                ["expr"]=>
+                object(PHPParser_Node_Scalar_LNumber)#2977 (2) {
+                  ["subNodes":protected]=>
+                  array(1) {
+                    ["value"]=>
+                    int(100)
+                  }
+                  ["attributes":protected]=>
+                  array(2) {
+                    ["startLine"]=>
+                    int(11)
+                    ["endLine"]=>
+                    int(11)
+                  }
+                }
+              }
+              ["attributes":protected]=>
+              array(2) {
+                ["startLine"]=>
+                int(11)
+                ["endLine"]=>
+                int(11)
+              }
+            }
+            [1]=>
+            object(PHPParser_Node_Stmt_Echo)#2904 (2) {
+              ["subNodes":protected]=>
+              array(1) {
+                ["exprs"]=>
+                array(2) {
+                  [0]=>
+                  object(PHPParser_Node_Expr_Variable)#2901 (2) {
+                    ["subNodes":protected]=>
+                    array(1) {
+                      ["name"]=>
+                      string(1) "a"
+                    }
+                    ["attributes":protected]=>
+                    array(2) {
+                      ["startLine"]=>
+                      int(12)
+                      ["endLine"]=>
+                      int(12)
+                    }
+                  }
+                  [1]=>
+                  object(PHPParser_Node_Expr_ConstFetch)#2900 (2) {
+                    ["subNodes":protected]=>
+                    array(1) {
+                      ["name"]=>
+                      object(PHPParser_Node_Name)#2895 (2) {
+                        ["subNodes":protected]=>
+                        array(1) {
+                          ["parts"]=>
+                          array(1) {
+                            [0]=>
+                            string(7) "PHP_EOL"
+                          }
+                        }
+                        ["attributes":protected]=>
+                        array(2) {
+                          ["startLine"]=>
+                          int(12)
+                          ["endLine"]=>
+                          int(12)
+                        }
+                      }
+                    }
+                    ["attributes":protected]=>
+                    array(2) {
+                      ["startLine"]=>
+                      int(12)
+                      ["endLine"]=>
+                      int(12)
+                    }
+                  }
+                }
+              }
+              ["attributes":protected]=>
+              array(2) {
+                ["startLine"]=>
+                int(12)
+                ["endLine"]=>
+                int(12)
+              }
+            }
+          }
+        }
+        ["attributes":protected]=>
+        array(2) {
+          ["startLine"]=>
+          int(10)
+          ["endLine"]=>
+          int(13)
+        }
+      }
+    }
+    ["attributes":protected]=>
+    array(2) {
+      ["startLine"]=>
+      int(10)
+      ["endLine"]=>
+      int(13)
+    }
+  }
+  [3]=>
+  object(PHPParser_Node_Expr_FuncCall)#2894 (2) {
+    ["subNodes":protected]=>
+    array(2) {
+      ["name"]=>
+      object(PHPParser_Node_Expr_Variable)#2877 (2) {
+        ["subNodes":protected]=>
+        array(1) {
+          ["name"]=>
+          string(2) "af"
+        }
+        ["attributes":protected]=>
+        array(2) {
+          ["startLine"]=>
+          int(15)
+          ["endLine"]=>
+          int(15)
+        }
+      }
+      ["args"]=>
+      array(0) {
+      }
+    }
+    ["attributes":protected]=>
+    array(2) {
+      ["startLine"]=>
+      int(15)
+      ["endLine"]=>
+      int(15)
+    }
+  }
+}

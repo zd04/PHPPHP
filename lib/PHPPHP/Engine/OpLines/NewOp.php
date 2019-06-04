@@ -23,6 +23,7 @@ class NewOp extends \PHPPHP\Engine\OpLine {
         //获取构造函数,运行构造函数
         $constructor = $classEntry->getConstructor();
         if ($constructor) {
+            /**把当前的方法指针指向对应的类的构造方法*/
             $data->executor->executorGlobals->call = new Engine\FunctionCall($data->executor, $constructor, $instance);
         }
         $this->result->setValue(Zval::factory($instance));

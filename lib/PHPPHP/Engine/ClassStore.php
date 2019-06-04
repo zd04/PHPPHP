@@ -10,7 +10,7 @@ class ClassStore {
 
     public function register(ClassEntry $ce) {
         $lcname = strtolower($ce->getName());
-        var_dump("classregister",$lcname);
+        //var_dump("classregister",$lcname);
         if (isset($this->classes[$lcname])) {
             echo sprintf("[WARN]: Class %s already defined", $ce->getName()),PHP_EOL;
 

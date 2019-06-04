@@ -8,7 +8,12 @@ class FunctionCall {
     protected $ci;
     protected $ce;
 
-    public function __construct(Executor $executor, FunctionData $function, Objects\ClassInstance $ci = null, Objects\ClassEntry $ce = null) {
+    /*保存执行器,要执行的是那个方法的,对象实例,类实例*/
+    public function __construct(Executor $executor, 
+        FunctionData $function, 
+        Objects\ClassInstance $ci = null, 
+        Objects\ClassEntry $ce = null
+    ) {
         $this->function = $function;
         $this->ci = $ci;
         $this->ce = $ce;
@@ -33,6 +38,9 @@ class FunctionCall {
     }
 
     public function execute(array $args, \PHPPHP\Engine\Zval $result) {
+        /**
+         * $this->executor 这个对象一致是一个对象的
+         */
         $this->function->execute($this->executor, $args, $result, $this->ci, $this->ce);
     }
 

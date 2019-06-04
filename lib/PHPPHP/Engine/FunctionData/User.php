@@ -10,9 +10,9 @@ class User extends Base {
     protected $params = array();
 
     public function __construct(Engine\OpArray $opArray, $byRef = false, array $params = array()) {
-        $this->opArray = $opArray;
-        $this->byRef = $byRef;
-        $this->params = $params;
+        $this->opArray = $opArray;/*函数体*/
+        $this->byRef = $byRef;/*返回值类型*/
+        $this->params = $params;/*参数的*/
     }
 
     protected function getFileName() {

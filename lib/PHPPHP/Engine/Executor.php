@@ -52,6 +52,9 @@ class Executor {
         $this->errorHandler = new ErrorHandler\Internal;
     }
 
+    /**如果是在关闭中的话，标记当前的状态是关闭中，并且指向关闭回调的
+    * 如果是已经在关闭中的话，标记关闭结束了
+    */
     public function shutdown() {
         if ($this->shutdown == self::IN_SHUTDOWN) {
             $this->shutdown = self::FINISHED_SHUTDOWN;
@@ -113,7 +116,7 @@ class Executor {
         //解析代码的
         $ast = $this->parseCode($code, $context);//代码
 
-        DEBUG && var_dump($ast);
+        //DEBUG && var_dump($ast);exit;
         $this->compiler->setFileName($context, $this->executorGlobals->cwd);
 
         return $this->compileCode($ast, $context);
@@ -121,7 +124,7 @@ class Executor {
 
     protected function compileCode(array $ast, $file) {
         try {
-            //var_dump($ast);exit;
+            var_dump($ast);exit;
             /*通过AST再编译的*/
             return $this->compiler->compile($ast);
 
@@ -197,6 +200,7 @@ class Executor {
                 call_user_func($preExecute, $scope);
             }
 
+            /**大部分的opline都没有返回值的??*/
             $ret = $scope->opLine->execute($scope);
 
             //运行之后的回调

@@ -8,11 +8,14 @@ class FunctionCall extends \PHPPHP\Engine\OpLine {
 
     public function execute(\PHPPHP\Engine\ExecuteData $data) {
         $functionCall = $data->executor->executorGlobals->call;
+
+        /*从栈中弹出参数的*/
         $args = array();
         $stack = $data->executor->getStack();
         for ($i = $stack->count() - 1; $i >= 0; $i--) {
             $args[] = $stack->pop();
         }
+        /**翻转顺序的*/
         $args = array_reverse($args);
 
         if (!$this->result) {

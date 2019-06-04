@@ -125,7 +125,7 @@ class Compiler {
 
     //生成oparray
     public function compile(array $ast, Zval\Ptr $returnContext = null) {
-        //DEBUG && var_dump("complie",$ast);
+        //var_dump("complie",$ast);exit;
         //创建一个新的opArray的
         $opArray = new OpArray($this->fileName);
         $this->opArray = $opArray;
@@ -169,9 +169,10 @@ class Compiler {
     protected function compileNode(\PHPParser_Node $node, Zval\Ptr $returnContext = null) {
         //查询类型的
         $nodeType = $node->getType();
-        var_dump($nodeType);
+        //var_dump($nodeType);
 
         //在上面的数组中包含的映射关系的
+        /*这些都是表达式的出口的*/
         if (isset($this->operators[$nodeType])) {
             //DEBUG && var_dump("in operators",'compile' . $this->operators[$nodeType][0]);
 
@@ -304,9 +305,10 @@ class Compiler {
             $this->compileNode($expr, $exprPtr);
 
 
+            /*输出多个的就是编译成多个opline*/
             $this->opArray[] = new OpLines\EchoOp(
                 $node->getLine(), 
-                $exprPtr, 
+                $exprPtr, /*op1*/
                 null, 
                 $returnContext ?: Zval::ptrFactory());
         }
@@ -376,6 +378,7 @@ class Compiler {
         $args = array();
 
         $this->compileChild($node, 'name', $namePtr);
+
         foreach ($node->args as $arg) {
             $ptr = Zval::ptrFactory();
             $this->compileChild($arg, 'value', $ptr);
@@ -489,7 +492,11 @@ class Compiler {
             $scope = Variable::SCOPE_GLOBAL;
         }
         $variable = Zval::variableFactory($name, null, $scope);
+
+        /*有一个栈保存当前环境编译的变量*/
         $this->opArray->addCompiledVariable($variable);
+
+        /*把值进行拷贝的*/
         $returnContext->assignZval($variable);
     }
 
@@ -767,7 +774,9 @@ class Compiler {
     }
 
     protected function compile_Stmt_Class($node) {
+
         //在这个地方已经保存了class的指针的信息了
+        /*每次定义一个类的时候都是一个新的实例的，不能保存之前定义的类的信息的*/
         $class = new ClassEntry($node->name);
         //var_dump($node->stmts);exit;
 
@@ -824,11 +833,13 @@ class Compiler {
         $funcData = $this->compileFunction($node);
 
         //当前操作的类的信息
+        /*这个是在当前的定义中的类，和前面定义的类不是一个实例的，在当前的类*/
         $this->currentClass
         ->getMethodStore()
         ->register($node->name, $funcData);
     }
 
+    /*实例化一个类的对象的*/
     public function compile_Expr_New($node, $returnContext = null) {
 
         $args = array();
@@ -843,13 +854,25 @@ class Compiler {
             $returnContext = Zval::ptrFactory();
         }
 
-        $this->opArray[] = $newOp = new OpLines\NewOp($node->getLine(), Zval::ptrFactory($node->class->toString()), null, $returnContext);
+        /*第一个是哪一行的，第二个是op1,第三个是op2,第四个是返回值*/
+        $this->opArray[] = $newOp = new OpLines\NewOp(
+            $node->getLine(), 
+            Zval::ptrFactory($node->class->toString()), 
+            null, 
+            $returnContext
+        );
 
         foreach ($args as $key => $arg) {
+            /*方法调用之前要发送参数的吗？*/
             $this->opArray[] = new OpLines\Send($node->getLine(), $arg, Zval::factory($key));
         }
 
-        $this->opArray[] = new OpLines\FunctionCall($node->getLine(), null, $returnContext, Zval::ptrFactory());
+        $this->opArray[] = new OpLines\FunctionCall(
+            $node->getLine(), 
+            null, 
+            $returnContext, 
+            Zval::ptrFactory()
+        );
 
         $newOp->noConstructorJumpOffset = $this->opArray->getNextOffset();
     }
@@ -889,6 +912,7 @@ class Compiler {
             }
         }
 
+        /*这个是函数体，就是一个性的opArray*/
         $this->compileChild($node, 'stmts');
 
         //最后一个是返回值,自动补全的
@@ -897,6 +921,7 @@ class Compiler {
         //生成用户自定义的函数信息
         $funcData = new FunctionData\User($this->opArray, (bool) $node->byRef, $params);
 
+        /*还原到之前的opArray的*/
         $this->opArray = $prevOpArray;
         return $funcData;
     }

@@ -8,6 +8,7 @@ class Send extends \PHPPHP\Engine\OpLine {
 
     public function execute(\PHPPHP\Engine\ExecuteData $data) {
         $ptr = null;
+        /**使用引用传递参数的??*/
         if($data->executor->executorGlobals->call->getFunction()->isArgByRef($this->op2->getValue())) {
             if ($this->op1->isVariable() || $this->op1->isRef() || $this->op1->isObject()) {
                 $op = $this->op1->getPtr();
@@ -20,6 +21,7 @@ class Send extends \PHPPHP\Engine\OpLine {
         } else {
             $ptr = Zval::ptrFactory($this->op1->getValue());
         }
+        /**参数数据压栈的??*/
         $data->executor->getStack()->push($ptr);
 
         $data->nextOp();
