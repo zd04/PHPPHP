@@ -1,0 +1,51 @@
+PHPPHP\PHP::executeFile,D:\codes\php\PHPPHP\test\globa2.php
+D:\codes\php\PHPPHP\lib\PHPPHP\Engine\Executor.php:111:
+class PHPParser_Node_Stmt_Function#2981 (2) {
+  protected $subNodes =>
+  array(5) {
+    'byRef' =>
+    bool(false)
+    'params' =>
+    array(0) {
+    }
+    'stmts' =>
+    array(4) {
+      [0] =>
+      class PHPParser_Node_Expr_Assign#2980 (2) {
+        ...
+      }
+      [1] =>
+      class PHPParser_Node_Expr_FuncCall#2904 (2) {
+        ...
+      }
+      [2] =>
+      class PHPParser_Node_Stmt_Global#2894 (2) {
+        ...
+      }
+      [3] =>
+      class PHPParser_Node_Expr_FuncCall#2876 (2) {
+        ...
+      }
+    }
+    'name' =>
+    string(2) "aa"
+    'namespacedName' =>
+    class PHPParser_Node_Name#2723 (2) {
+      protected $subNodes =>
+      array(1) {
+        ...
+      }
+      protected $attributes =>
+      array(2) {
+        ...
+      }
+    }
+  }
+  protected $attributes =>
+  array(2) {
+    'startLine' =>
+    int(4)
+    'endLine' =>
+    int(12)
+  }
+}

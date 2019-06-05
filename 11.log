@@ -1,0 +1,286 @@
+PHPPHP\PHP::executeFile,D:\codes\php\PHPPHP\test\globa2.php
+D:\codes\php\PHPPHP\lib\PHPPHP\Engine\FunctionData\User.php:13:
+class PHPPHP\Engine\OpArray#2689 (8) {
+  protected $opLines =>
+  array(9) {
+    [0] =>
+    class PHPPHP\Engine\OpLines\Assign#2686 (6) {
+      public $dim =>
+      NULL
+      public $property =>
+      NULL
+      public $op1 =>
+      class PHPPHP\Engine\Zval\Ptr#2687 (1) {
+        ...
+      }
+      public $op2 =>
+      class PHPPHP\Engine\Zval\Ptr#2685 (1) {
+        ...
+      }
+      public $result =>
+      NULL
+      public $lineno =>
+      int(6)
+    }
+    [1] =>
+    class PHPPHP\Engine\OpLines\InitFCallByName#2643 (4) {
+      public $op1 =>
+      NULL
+      public $op2 =>
+      class PHPPHP\Engine\Zval\Ptr#2642 (1) {
+        ...
+      }
+      public $result =>
+      NULL
+      public $lineno =>
+      int(7)
+    }
+    [2] =>
+    class PHPPHP\Engine\OpLines\Send#2568 (4) {
+      public $op1 =>
+      class PHPPHP\Engine\Zval\Ptr#2611 (1) {
+        ...
+      }
+      public $op2 =>
+      class PHPPHP\Engine\Zval\Value#2522 (4) {
+        ...
+      }
+      public $result =>
+      NULL
+      public $lineno =>
+      int(7)
+    }
+    [3] =>
+    class PHPPHP\Engine\OpLines\FunctionCall#255 (4) {
+      public $op1 =>
+      NULL
+      public $op2 =>
+      NULL
+      public $result =>
+      class PHPPHP\Engine\Zval\Ptr#250 (1) {
+        ...
+      }
+      public $lineno =>
+      int(7)
+    }
+    [4] =>
+    class PHPPHP\Engine\OpLines\FetchGlobalVariable#229 (4) {
+      public $op1 =>
+      class PHPPHP\Engine\Zval\Ptr#217 (1) {
+        ...
+      }
+      public $op2 =>
+      NULL
+      public $result =>
+      NULL
+      public $lineno =>
+      int(9)
+    }
+    [5] =>
+    class PHPPHP\Engine\OpLines\InitFCallByName#216 (4) {
+      public $op1 =>
+      NULL
+      public $op2 =>
+      class PHPPHP\Engine\Zval\Ptr#215 (1) {
+        ...
+      }
+      public $result =>
+      NULL
+      public $lineno =>
+      int(11)
+    }
+    [6] =>
+    class PHPPHP\Engine\OpLines\Send#9221 (4) {
+      public $op1 =>
+      class PHPPHP\Engine\Zval\Ptr#202 (1) {
+        ...
+      }
+      public $op2 =>
+      class PHPPHP\Engine\Zval\Value#9222 (4) {
+        ...
+      }
+      public $result =>
+      NULL
+      public $lineno =>
+      int(11)
+    }
+    [7] =>
+    class PHPPHP\Engine\OpLines\FunctionCall#9223 (4) {
+      public $op1 =>
+      NULL
+      public $op2 =>
+      NULL
+      public $result =>
+      class PHPPHP\Engine\Zval\Ptr#9225 (1) {
+        ...
+      }
+      public $lineno =>
+      int(11)
+    }
+    [8] =>
+    class PHPPHP\Engine\OpLines\ReturnOp#9226 (4) {
+      public $op1 =>
+      NULL
+      public $op2 =>
+      NULL
+      public $result =>
+      NULL
+      public $lineno =>
+      int(4)
+    }
+  }
+  protected $numOps =>
+  int(9)
+  protected $compiledVariables =>
+  array(3) {
+    [0] =>
+    class PHPPHP\Engine\Zval\Variable#2684 (5) {
+      protected $name =>
+      class PHPPHP\Engine\Zval\Ptr#2676 (1) {
+        ...
+      }
+      protected $class =>
+      NULL
+      protected $zval =>
+      NULL
+      protected $executor =>
+      NULL
+      public $scope =>
+      int(1)
+    }
+    [1] =>
+    class PHPPHP\Engine\Zval\Variable#2592 (5) {
+      protected $name =>
+      class PHPPHP\Engine\Zval\Ptr#2591 (1) {
+        ...
+      }
+      protected $class =>
+      NULL
+      protected $zval =>
+      NULL
+      protected $executor =>
+      NULL
+      public $scope =>
+      int(1)
+    }
+    [2] =>
+    class PHPPHP\Engine\Zval\Variable#201 (5) {
+      protected $name =>
+      class PHPPHP\Engine\Zval\Ptr#9219 (1) {
+        ...
+      }
+      protected $class =>
+      NULL
+      protected $zval =>
+      NULL
+      protected $executor =>
+      NULL
+      public $scope =>
+      int(1)
+    }
+  }
+  protected $executor =>
+  NULL
+  protected $breakContinueInfo =>
+  array(0) {
+  }
+  protected $currentBCPos =>
+  int(-1)
+  protected $numBC =>
+  int(0)
+  protected $fileName =>
+  string(35) "D:\codes\php\PHPPHP\test\globa2.php"
+}
+D:\codes\php\PHPPHP\lib\PHPPHP\PHP.php:93:
+class PHPPHP\Engine\OpArray#2690 (8) {
+  protected $opLines =>
+  array(4) {
+    [0] =>
+    class PHPPHP\Engine\OpLines\Assign#9230 (6) {
+      public $dim =>
+      NULL
+      public $property =>
+      NULL
+      public $op1 =>
+      class PHPPHP\Engine\Zval\Ptr#9229 (1) {
+        ...
+      }
+      public $op2 =>
+      class PHPPHP\Engine\Zval\Ptr#9231 (1) {
+        ...
+      }
+      public $result =>
+      NULL
+      public $lineno =>
+      int(3)
+    }
+    [1] =>
+    class PHPPHP\Engine\OpLines\InitFCallByName#9235 (4) {
+      public $op1 =>
+      NULL
+      public $op2 =>
+      class PHPPHP\Engine\Zval\Ptr#9236 (1) {
+        ...
+      }
+      public $result =>
+      NULL
+      public $lineno =>
+      int(14)
+    }
+    [2] =>
+    class PHPPHP\Engine\OpLines\FunctionCall#9238 (4) {
+      public $op1 =>
+      NULL
+      public $op2 =>
+      NULL
+      public $result =>
+      class PHPPHP\Engine\Zval\Ptr#9240 (1) {
+        ...
+      }
+      public $lineno =>
+      int(14)
+    }
+    [3] =>
+    class PHPPHP\Engine\OpLines\ReturnOp#9241 (4) {
+      public $op1 =>
+      NULL
+      public $op2 =>
+      NULL
+      public $result =>
+      NULL
+      public $lineno =>
+      int(14)
+    }
+  }
+  protected $numOps =>
+  int(4)
+  protected $compiledVariables =>
+  array(1) {
+    [0] =>
+    class PHPPHP\Engine\Zval\Variable#9232 (5) {
+      protected $name =>
+      class PHPPHP\Engine\Zval\Ptr#9233 (1) {
+        ...
+      }
+      protected $class =>
+      NULL
+      protected $zval =>
+      NULL
+      protected $executor =>
+      NULL
+      public $scope =>
+      int(1)
+    }
+  }
+  protected $executor =>
+  NULL
+  protected $breakContinueInfo =>
+  array(0) {
+  }
+  protected $currentBCPos =>
+  int(-1)
+  protected $numBC =>
+  int(0)
+  protected $fileName =>
+  string(35) "D:\codes\php\PHPPHP\test\globa2.php"
+}

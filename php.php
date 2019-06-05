@@ -19,7 +19,7 @@ $php = new PHPPHP\PHP;
 $php->registerExtensionByName('Shim'); // This *MUST* be the last core extension to be loaded!!!
 
 list($options, $args) = parseCliArgs($argv);
-
+//var_dump($options,$args);exit;
 define("DEBUG",true);
 //调试模式的
 if(isset($options['d'])){
@@ -31,7 +31,9 @@ if(isset($options['d'])){
 if (isset($options['v'])) {
     echo "PHPPHP - Dev Master\n";
 } elseif (isset($options['f'])) {
-    $php->executeFile(realpath($options['f']));
+    $file = realpath($options['f']);
+    //var_dump($options['f'],realpath($options['f']));
+    $php->executeFile($file);
 } elseif (isset($options['r'])) {
     $php->setCWD(getcwd());
     if(isset($options['c'])){

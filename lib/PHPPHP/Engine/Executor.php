@@ -107,7 +107,8 @@ class Executor {
             /*获取到的是编译的节点parse_node，就是AST*/
             $this->files[$fileName] = $this->parseCode($code, $fileName);//代码
             //echo __METHOD__,PHP_EOL;
-            //var_dump($fileName,$this->files[$fileName]);//exit;
+//            var_dump($fileName,$this->files[$fileName]);exit;
+            //var_dump($this->files[$fileName][1]);exit;
         }
         return $this->compileCode($this->files[$fileName], $fileName);
     }
@@ -164,7 +165,7 @@ class Executor {
 
         //echo __METHOD__,PHP_EOL;
         //var_dump($this);
-        var_dump($opArray);exit;
+        //var_dump($opArray);exit;
 
         $scope = new ExecuteData($this, $opArray, $function);/*运行环境的的变量信息*/
         $scope->arguments = $args;

@@ -59,6 +59,7 @@ class PHP {
     }
 
     public function executeFile($file) {
+        //var_dump($file);exit;
         if (empty($file)) {
             throw new \RuntimeException('Filename must not be empty');
         }
@@ -89,6 +90,7 @@ class PHP {
     //执行代码的
     public function executeOpLines(Engine\OpArray $opCodes) {
         try {
+            //var_dump($opCodes);exit;
             $retval = $this->executor->execute($opCodes);
             if ($retval) {
                 return $retval->getValue();

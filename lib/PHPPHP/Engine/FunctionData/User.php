@@ -10,6 +10,7 @@ class User extends Base {
     protected $params = array();
 
     public function __construct(Engine\OpArray $opArray, $byRef = false, array $params = array()) {
+        var_dump($opArray);
         $this->opArray = $opArray;/*函数体*/
         $this->byRef = $byRef;/*返回值类型*/
         $this->params = $params;/*参数的*/

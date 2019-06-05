@@ -1,0 +1,77 @@
+PHPPHP\PHP::executeFile,D:\codes\php\PHPPHP\test\globa2.php
+D:\codes\php\PHPPHP\lib\PHPPHP\Engine\Executor.php:110:
+string(35) "D:\codes\php\PHPPHP\test\globa2.php"
+D:\codes\php\PHPPHP\lib\PHPPHP\Engine\Executor.php:110:
+array(3) {
+  [0] =>
+  class PHPParser_Node_Expr_Assign#2985 (2) {
+    protected $subNodes =>
+    array(2) {
+      'var' =>
+      class PHPParser_Node_Expr_Variable#2984 (2) {
+        ...
+      }
+      'expr' =>
+      class PHPParser_Node_Scalar_LNumber#2983 (2) {
+        ...
+      }
+    }
+    protected $attributes =>
+    array(2) {
+      'startLine' =>
+      int(3)
+      'endLine' =>
+      int(3)
+    }
+  }
+  [1] =>
+  class PHPParser_Node_Stmt_Function#2981 (2) {
+    protected $subNodes =>
+    array(5) {
+      'byRef' =>
+      bool(false)
+      'params' =>
+      array(0) {
+        ...
+      }
+      'stmts' =>
+      array(4) {
+        ...
+      }
+      'name' =>
+      string(2) "aa"
+      'namespacedName' =>
+      class PHPParser_Node_Name#2723 (2) {
+        ...
+      }
+    }
+    protected $attributes =>
+    array(2) {
+      'startLine' =>
+      int(4)
+      'endLine' =>
+      int(12)
+    }
+  }
+  [2] =>
+  class PHPParser_Node_Expr_FuncCall#2722 (2) {
+    protected $subNodes =>
+    array(2) {
+      'name' =>
+      class PHPParser_Node_Name#2721 (2) {
+        ...
+      }
+      'args' =>
+      array(0) {
+        ...
+      }
+    }
+    protected $attributes =>
+    array(2) {
+      'startLine' =>
+      int(14)
+      'endLine' =>
+      int(14)
+    }
+  }
+}

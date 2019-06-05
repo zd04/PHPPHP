@@ -9,6 +9,13 @@ function aa()
 	global $cc;
 	//$cc = 200;
 	var_dump($cc);
+
+	static $dd;
+
+	if($dd){
+        $dd = 100;
+    }
+
 }
 
 aa();
