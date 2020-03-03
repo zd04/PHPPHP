@@ -1,0 +1,111 @@
+PHPPHP\PHP::executeFile,/mnt/hgfs/wwwroot/PHPPHP/test/co2.php
+array(1) {
+  [0]=>
+  object(PHPParser_Node_Expr_Assign)#3333 (2) {
+    ["subNodes":protected]=>
+    array(2) {
+      ["var"]=>
+      object(PHPParser_Node_Expr_Variable)#3346 (2) {
+        ["subNodes":protected]=>
+        array(1) {
+          ["name"]=>
+          string(4) "func"
+        }
+        ["attributes":protected]=>
+        array(3) {
+          ["comments"]=>
+          array(1) {
+            [0]=>
+            object(PHPParser_Comment)#3348 (2) {
+              ["text":protected]=>
+              string(11) "// co2.php
+"
+              ["line":protected]=>
+              int(3)
+            }
+          }
+          ["startLine"]=>
+          int(6)
+          ["endLine"]=>
+          int(6)
+        }
+      }
+      ["expr"]=>
+      object(PHPParser_Node_Expr_Closure)#3330 (2) {
+        ["subNodes":protected]=>
+        array(5) {
+          ["static"]=>
+          bool(false)
+          ["byRef"]=>
+          bool(false)
+          ["params"]=>
+          array(0) {
+          }
+          ["uses"]=>
+          array(0) {
+          }
+          ["stmts"]=>
+          array(0) {
+          }
+        }
+        ["attributes":protected]=>
+        array(2) {
+          ["startLine"]=>
+          int(6)
+          ["endLine"]=>
+          int(10)
+        }
+      }
+    }
+    ["attributes":protected]=>
+    array(3) {
+      ["comments"]=>
+      array(1) {
+        [0]=>
+        object(PHPParser_Comment)#3348 (2) {
+          ["text":protected]=>
+          string(11) "// co2.php
+"
+          ["line":protected]=>
+          int(3)
+        }
+      }
+      ["startLine"]=>
+      int(6)
+      ["endLine"]=>
+      int(10)
+    }
+  }
+}
+object(PHPPHP\Engine\OpArray)#3296 (8) {
+  ["opLines":protected]=>
+  array(1) {
+    [0]=>
+    object(PHPPHP\Engine\OpLines\ReturnOp)#2990 (4) {
+      ["op1"]=>
+      NULL
+      ["op2"]=>
+      NULL
+      ["result"]=>
+      NULL
+      ["lineno"]=>
+      int(6)
+    }
+  }
+  ["numOps":protected]=>
+  int(1)
+  ["compiledVariables":protected]=>
+  array(0) {
+  }
+  ["executor":protected]=>
+  NULL
+  ["breakContinueInfo":protected]=>
+  array(0) {
+  }
+  ["currentBCPos":protected]=>
+  int(-1)
+  ["numBC":protected]=>
+  int(0)
+  ["fileName":protected]=>
+  string(37) "/mnt/hgfs/wwwroot/PHPPHP/test/co2.php"
+}

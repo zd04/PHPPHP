@@ -110,6 +110,9 @@ class Executor {
 //            var_dump($fileName,$this->files[$fileName]);exit;
             //var_dump($this->files[$fileName][1]);exit;
         }
+        
+        var_dump($this->files[$fileName]);
+
         return $this->compileCode($this->files[$fileName], $fileName);
     }
 
